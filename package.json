@@ -21,18 +21,24 @@
     "lib": "lib",
     "test": "test"
   },
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.14.8"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --mode=development --watch",
+    "postinstall": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Muz-98/Amazon.git"
+    "url": "git+https://github.com/Muz-98/A-muz-on.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Muz-98/Amazon/issues"
+    "url": "https://github.com/Muz-98/A-muz-on/issues"
   },
-  "homepage": "https://github.com/Muz-98/Amazon#readme"
+  "homepage": "https://github.com/Muz-98/A-muz-on#readme"
 }
