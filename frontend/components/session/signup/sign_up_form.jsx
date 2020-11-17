@@ -1,6 +1,6 @@
 import React from 'react'
 
-class SessionForm extends React.Component {
+class SignupForm extends React.Component {
     constructor(props) {
         super(props);
 
@@ -32,3 +32,5 @@ class SessionForm extends React.Component {
         )
     }
 }
+
+export default SignupForm;

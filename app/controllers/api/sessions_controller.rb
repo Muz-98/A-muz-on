@@ -1,4 +1,4 @@
-class SessionsController < ApplicationController
+class Api::SessionsController < ApplicationController
     def create 
         # debugger 
         @user = User.find_by_credentials(
@@ -7,10 +7,10 @@ class SessionsController < ApplicationController
 		)
 
 		if @user 
-            login!(user) 
+            login!(@user) 
             render 'api/users/show'         
 		else 
-			render json: 'invalid credentials'
+			render json: 'invalid credentials', status: 422
 		end
     end
 
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
         if logged_in?
             render json: {} if logout!
         else
-            render json: 'Not successfully logout'
+            render json: 'Not successfully logout', status: 422
         end
     end
 end

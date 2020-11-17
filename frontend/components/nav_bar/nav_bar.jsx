@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-const Greeting = (props) => {
+const NavBar = (props) => {
     const logged_in = () => (
         <div>
             <h2>Welcome, {props.currentUser.username}</h2>
@@ -19,4 +19,4 @@ const Greeting = (props) => {
     return (props.currentUser) ? logged_in() : logged_out();
 }
 
-export default Greeting;
+export default NavBar;
