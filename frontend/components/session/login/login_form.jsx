@@ -32,7 +32,9 @@ class LoginForm extends React.Component {
         return (
             <div className="login-div">
                 {/* <img src='../../../../app/assets/images/AMUZON Logo.png'/> */}
-                <img className="login-logo" src={window.logoBlack} alt='amuzon logo' />
+                <Link to="/">
+                    <img className="login-logo" src={window.logoBlack} alt='amuzon logo' />
+                </Link>
                 <form className="login-form" onSubmit={this.handleSubmit}>
                     <h1>{this.props.formType}</h1>
                     <h5 className="login-label-email">Email</h5>

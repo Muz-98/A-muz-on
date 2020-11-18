@@ -30,7 +30,9 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className="signup-div">
-                <img className="signup-logo" src={window.logoBlack} alt='amuzon logo'/>
+                <Link to="/">
+                    <img className="signup-logo" src={window.logoBlack} alt='amuzon logo'/>
+                </Link>
                 <form className="signup-form" onSubmit={this.handleSubmit}> 
                     <h1>{this.props.formType}</h1>
                 <h5 className="signup-label-username">Your username</h5>
