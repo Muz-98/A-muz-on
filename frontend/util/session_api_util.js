@@ -4,7 +4,7 @@ export const signup = (user) => {
         url: "/api/users",
         data: { user }
             // user: {
-            //     username: user.username,
+            //     name: user.name,
             //     password: user.password
             // }
         // }
@@ -17,7 +17,7 @@ export const login = (user) => {
         url: "/api/session",
         data: { user }
         // user: {
-        //     username: user.username,
+        //     name: user.name,
         //     password: user.password           
         // } 
     });

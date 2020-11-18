@@ -1,0 +1,95 @@
+.signup-div {
+    position: static;
+  margin: 0 auto;
+  border-color: #DDDDDD;
+  border: 0.5px solid #DDDDDD;
+  border-radius: 3px;
+  width: 340px;
+  height: 516px;
+  padding-left: 25px;
+  font-family: Arial, sans-serif;
+}
+
+.signup-div h1 {
+    font-size: 28px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.signup-label-name {
+    // display: block;
+    // padding: 0px 0px 2px 2px;
+    // font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.signup-label-email {
+    // display: inline-block;
+    // padding: 0px 0px 2px 2px;
+    // font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.signup-label-password {
+    // display: inline-block;
+    // padding: 0px 0px 2px 2px;
+    // font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.signup-div input {
+    // display: inline-block;
+    width: 312px;
+    height: 31px; 
+    // padding: 3px 7px;
+  border-right-color: #DDDDDD;
+  border-left-color: #DDDDDD;
+  border-radius: 3px;
+  border-width: 0.5px;
+  margin-bottom: 10px;
+}
+
+.signup-div label {
+    margin-bottom: 5px;
+}
+
+.signup-div input:focus {
+    -webkit-box-shadow: 0px 0px 1.5px 1.5px rgba(231,118,0,0.9);
+  -moz-box-shadow: 0px 0px 1.5px 1.5px rgba(231,118,0,0.9);
+  box-shadow: 0px 0px 1.5px 1.5px rgba(231,118,0,0.9);
+  outline:0;
+}
+
+.create-account-btn{
+  width:315px;
+  height:33px;
+  font-size:14px;
+
+  background: linear-gradient(#F7DEA1, #F0C14D);
+  border: 0.5px solid #aaaaaa;
+  border-radius:3px;
+  margin-top: 10px;
+}
+
+.create-account-btn:hover{
+background: linear-gradient(#F5D68A, #EEBA36);
+}
+
+.TermsNCond {
+    font-size: 12px;
+    width: 312px;
+    height: 32px;
+    margin: 18 0 0;
+    margin-bottom: 50px;;
+}
+
+.signup-form-footer {
+    display: flex;
+    font-size: 13px;
+    margin-top: 40px;
+}
+
+.signup-form-footer Link {
+    margin-top: 10px;
+    color: red;
+}
