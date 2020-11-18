@@ -5,7 +5,7 @@ import NavBarContainer from '../nav_bar/nav_bar_container'
 const SplashPage = props => {
     return (
         <div>
-            <h1>Splashhhh</h1>
+            {/* <h1>Splashhhh</h1> */}
             <NavBarContainer />
         </div>
     )

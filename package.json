@@ -1,5 +1,5 @@
 {
-  "name": "amazon",
+  "username": "amazon",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.12.3",

@@ -6,7 +6,7 @@ class SignupForm extends React.Component {
         super(props);
 
         this.state = {
-            name: "",
+            username: "",
             email: "",
             password: ""
         };
@@ -24,7 +24,6 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        console.log(this.props)
         this.props.processForm(user);
     }
 
@@ -34,8 +33,8 @@ class SignupForm extends React.Component {
                 {/* <img alt='amuzon logo' src={require('../../../../app/assets/images/AMUZON_Logo.png')} /> */}
                 <form className="signup-form" onSubmit={this.handleSubmit}> 
                     <h1>{this.props.formType}</h1>
-                <h5 className="signup-label-name">Your name</h5>
-                    <input type="text" onChange={this.update('name')}/>
+                <h5 className="signup-label-username">Your username</h5>
+                    <input type="text" onChange={this.update('username')}/>
                 <h5 className="signup-label-email">Email</h5>
                     <input type="text" onChange={this.update('email')}/>
                 <h5 className="signup-label-password">Password</h5>
