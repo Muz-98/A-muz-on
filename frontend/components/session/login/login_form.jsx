@@ -32,7 +32,7 @@ class LoginForm extends React.Component {
         return (
             <div className="login-div">
                 {/* <img src='../../../../app/assets/images/AMUZON Logo.png'/> */}
-                
+                <img className="login-logo" src={window.logoBlack} alt='amuzon logo' />
                 <form className="login-form" onSubmit={this.handleSubmit}>
                     <h1>{this.props.formType}</h1>
                     <h5 className="login-label-email">Email</h5>
@@ -41,15 +41,15 @@ class LoginForm extends React.Component {
                     <input type="password" onChange={this.update('password')} />
 
                     <button className="login-form-signin-btn">Sign in</button>
-                </form>
-                <div className="login-form-footer">
-                    <p className="login-form-old-user">New to A-Muz-On?</p>
-                    <Link to="/signup">
-                    <button className="login-form-signup-btn">Create your A-Muz-On account
-                    </button>
-                    </Link>
+                    <div className="login-form-footer">
+                        <p className="login-form-old-user"><span>New to A-Muz-On?</span></p>
+                        <Link to="/signup">
+                        <button className="login-form-signup-btn">Create your A-Muz-On account
+                        </button>
+                        </Link>
 
-                </div>
+                    </div>
+                </form>
             </div>
         )
     }

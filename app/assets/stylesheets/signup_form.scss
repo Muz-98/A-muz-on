@@ -1,4 +1,4 @@
-.signup-div {
+.signup-form {
     position: static;
   margin: 0 auto;
   border-color: #DDDDDD;
@@ -10,7 +10,15 @@
   font-family: Arial, sans-serif;
 }
 
-.signup-div h1 {
+.signup-logo {
+    width: 140px;
+    height: 51px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.signup-form h1 {
     font-size: 28px;
     font-weight: normal;
     margin-bottom: 20px;
@@ -87,6 +95,7 @@ background: linear-gradient(#F5D68A, #EEBA36);
     display: flex;
     font-size: 13px;
     margin-top: 40px;
+   align-items: center;
 }
 
 .signup-form-footer Link {

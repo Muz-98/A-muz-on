@@ -30,7 +30,7 @@ class SignupForm extends React.Component {
     render() {
         return (
             <div className="signup-div">
-                {/* <img alt='amuzon logo' src={require('../../../../app/assets/images/AMUZON_Logo.png')} /> */}
+                <img className="signup-logo" src={window.logoBlack} alt='amuzon logo'/>
                 <form className="signup-form" onSubmit={this.handleSubmit}> 
                     <h1>{this.props.formType}</h1>
                 <h5 className="signup-label-username">Your username</h5>
@@ -43,12 +43,12 @@ class SignupForm extends React.Component {
                 <button className="create-account-btn">Create your A-Muz-On account</button>
 
                     <p className="TermsNCond">By creating an account, you agree to A-Muz-On's Conditions of Use and Privacy Notice.</p>
-                </form>
                     <div className="signup-form-footer">
-                        <p className="signup-form-old-user">Already have an account?</p>
+                        <p className="signup-form-old-user">Already have an account?   </p>
                         <Link to="/login">Sign-In</Link>
 
                     </div>
+                </form>
             </div>
         )
     }

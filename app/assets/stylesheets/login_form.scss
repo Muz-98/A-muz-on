@@ -1,4 +1,4 @@
-.login-div {
+.login-form {
     position: static;
   margin: 0 auto;
   border-color: #DDDDDD;
@@ -8,6 +8,14 @@
 //   height: 279px;
   padding-left: 25px;
   font-family: Arial, sans-serif;
+}
+
+.login-logo {
+    width: 140px;
+    height: 51px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .login-form {
@@ -84,6 +92,12 @@ background: linear-gradient(#F5D68A, #EEBA36);
     font-size: 13px;
     margin-top: 40px;
 }
+
+// .login_form-old-user {
+//     display: block;
+//     margin-left: auto;
+//     margin-right: auto;
+// }
 
 .login-form-footer Link {
     margin-top: 10px;
