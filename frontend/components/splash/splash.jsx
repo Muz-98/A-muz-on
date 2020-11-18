@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBarContainer from '../nav_bar/nav_bar_container'
+import Body from '../body/body'
 
 
 const SplashPage = props => {
@@ -7,6 +8,7 @@ const SplashPage = props => {
         <div>
             {/* <h1>Splashhhh</h1> */}
             <NavBarContainer />
+            <Body />
         </div>
     )
 }

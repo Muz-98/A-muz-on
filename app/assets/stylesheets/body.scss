@@ -1,0 +1,17 @@
+.body-img {
+    width: 100%;
+    z-index: -1;
+    height: 800px;
+    margin-bottom: -150px;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    // background: rgb(254,135,115);
+    // -webkit-mask-image: linear-gradient(107deg, rgba(254,135,115,0.7679446778711485) 0%, rgba(254,135,115,1) 99%);
+}
+
+// .body-comps {
+//     width: 100%;
+//     z-index: -1;
+//     margin-bottom: -150px;
+//     background: rgb(254,135,115);
+// background: linear-gradient(0deg, rgba(254,135,115,0.7035189075630253) 0%, rgba(254,135,115,1) 99%);
+// }
