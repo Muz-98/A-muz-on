@@ -41,8 +41,9 @@ class SignupForm extends React.Component {
                     <input type="text" onChange={this.update('email')}/>
                 <h5 className="signup-label-password">Password</h5>
                     <input type="password" onChange={this.update('password')}/>
-
-                <button className="create-account-btn">Create your A-Muz-On account</button>
+                <Link to="/">
+                    <button className="create-account-btn">Create your A-Muz-On account</button>
+                </Link>
 
                     <p className="TermsNCond">By creating an account, you agree to A-Muz-On's Conditions of Use and Privacy Notice.</p>
                     <div className="signup-form-footer">

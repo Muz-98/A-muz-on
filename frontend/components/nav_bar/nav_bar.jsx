@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 //     const logged_in = () => (
 //         <div>
 //             <h2>Welcome, {props.currentUser.username}</h2>
-//             <Link to="/">Logout</Link>
+//             <Link to="/login">Logout</Link>
 //         </div>   
 //     );
 
@@ -26,10 +26,45 @@ class NavBar extends React.Component {
 
     constructor(props) {
         super(props)
+
+        this.handleClick = this.handleClick.bind(this)
     }
 
+    handleClick(e) {
+        e.preventDefault();
+        this.props.logout(this.props.currentUser)
+    }
 
     render() {
+        const signinName = (this.props.currentUser) ? this.props.currentUser.username : 'Sign in'
+
+        const logged_out_drop = () => (
+            // <div className="nav-bar-right-option-1-dropdown">
+            <>
+                <Link to="/login">
+                    <button className="dropdown-signin-btn">Sign in</button>
+                </Link>
+
+                <div className="dropdown-new-customer">
+                    <p>New Customer?</p>
+                    <Link to="/signup">Start here.</Link>
+
+                </div>
+            </>
+            // </div>
+        )
+
+        const logged_in_drop = () => {
+            <>
+                <Link to="/login">
+                    <button className="dropdown-signout-btn"onClick={this.handleClick}>Sign out</button>
+                </Link> 
+            </>
+        }
+        
+
+        const dropdown = (this.props.currentUser) ? logged_in_drop() : logged_out_drop()
+
             return (
                 <div className="nav-bar-div">
                     <div className="nav-bar-top">
@@ -50,22 +85,25 @@ class NavBar extends React.Component {
 
                         <div className="nav-bar-right">
                             <div className="nav-bar-right-option">
-                                <div className="nav-bar-right-option-1">
-                                    <div className="nav-bar-right-11">
-                                        Hello, Sign in
+                                <div className="nav-bar-right-option-1-container">
+                                    <div className="nav-bar-right-option-1">
+                                        <div className="nav-bar-right-11">
+                                            Hello, {signinName}
+                                        </div>
+                                        <div className="nav-bar-right-12">
+                                            Accounts & Lists
+                                        </div>
                                     </div>
-                                    <div className="nav-bar-right-12">
-                                        Accounts & Lists
-                                    </div>
-                                </div>
-                                <div className="nav-bar-right-option-1-dropdown">
-                                    <Link to="/login">
-                                        <button className="dropdown-signin-btn">Sign in</button>
-                                    </Link>
-                                    <div className="dropdown-new-customer">
-                                        <p>New Customer?</p>
-                                        <Link to="/signup">Start here.</Link>
+                                    <div className="nav-bar-right-option-1-dropdown">
+                                        {/* <Link to="/login">
+                                            <button className="dropdown-signin-btn">Sign in</button>
+                                        </Link>
+                                        <div className="dropdown-new-customer">
+                                            <p>New Customer?</p>
+                                            <Link to="/signup">Start here.</Link>
 
+                                        </div> */}
+                                        {dropdown}
                                     </div>
                                 </div>
                             </div>

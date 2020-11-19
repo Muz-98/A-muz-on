@@ -107,19 +107,78 @@
     color: white;
     padding: 5px;
     border: transparent 1px solid;
+    // margin-bottom: 10px;
 }
 
 .nav-bar-right-option:hover {
     border: white 1px solid;
     cursor: pointer;
 }
-
+.nav-bar-right-option-1-container {
+    position: relative;
+    text-align: left;
+}
 .nav-bar-right-option-1-dropdown {
     display: none;
     position: absolute;
+    background: #ffffff;
+    width: 450px;
+    height: 100px;
+   right: -110px;
+   text-align: center;
+    // margin-top: 10px;
 }
 
+.dropdown-signin-btn {
+    width: 223px;
+    height: 39px;
+    color: black;
+    font-size:14px;
 
+  background: linear-gradient(#F7DEA1, #F0C14D);
+  border: 0.5px solid #aaaaaa;
+  border-radius:3px;
+  margin-top: 10px;
+}
+
+.dropdown-signin-btn:hover{
+background: linear-gradient(#F5D68A, #EEBA36);
+cursor: pointer;
+}
+
+.dropdown-signout-btn {
+    width: 223px;
+    height: 39px;
+    color: black;
+    font-size:14px;
+
+  background: linear-gradient(#F7DEA1, #F0C14D);
+  border: 0.5px solid #aaaaaa;
+  border-radius:3px;
+  margin-top: 10px;
+}
+
+.dropdown-signout-btn:hover{
+background: linear-gradient(#F5D68A, #EEBA36);
+cursor: pointer;
+}
+
+.nav-bar-right-option-1-container:hover .nav-bar-right-option-1-dropdown {
+    display: inline-block;
+}
+
+.dropdown-new-customer {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 11px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    // line-height: 0.1em;
+}
+
+.dropdown-new-customer p {
+    color: black
+}
 
 .nav-bar-right-11 {
     font-size: 12px;
