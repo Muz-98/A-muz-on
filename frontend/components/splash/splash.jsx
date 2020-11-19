@@ -5,7 +5,7 @@ import Body from '../body/body'
 
 const SplashPage = props => {
     return (
-        <div>
+        <div className="splash-div">
             {/* <h1>Splashhhh</h1> */}
             <NavBarContainer />
             <Body />
