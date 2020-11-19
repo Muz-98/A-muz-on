@@ -1,5 +1,5 @@
 import React from 'react'
-// import Product from '../product/product';
+import Product from '../product/product';
 
 
 const Body = () => {
@@ -12,19 +12,19 @@ const Body = () => {
 
             <div className="body-products-top">
                 <div className="product1">
-                    {/* <Product /> */}
+                    <Product />
 
                 </div>
                     <div className="product2">
-                    {/* <Product /> */}
+                    <Product />
 
                 </div>
                     <div className="product3">
-                    {/* <Product /> */}
+                    <Product />
 
                 </div>
                     <div className="product4">
-                    {/* <Product /> */}
+                    <Product />
 
                 </div>
 
@@ -32,19 +32,19 @@ const Body = () => {
 
             <div className="body-products-bottom">
                 <div>
-                    {/* <Product /> */}
+                    <Product />
 
                 </div>
                 <div>
-                    {/* <Product /> */}
+                    <Product />
 
                 </div>
                 <div>
-                    {/* <Product /> */}
+                    <Product />
 
                 </div>
                 <div>
-                    {/* <Product /> */}
+                    <Product />
 
                 </div>
 
