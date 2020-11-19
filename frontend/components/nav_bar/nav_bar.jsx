@@ -22,59 +22,80 @@ import { Link } from 'react-router-dom'
 
 // export default NavBar;
 
-const NavBar = () => {
-    return (
-        <div className="nav-bar-div">
-            <div className="nav-bar-top">
-                <div className="nav-bar-menu">
-                    <img className="nav-bar-menu-icon" src={window.navLeft} alt="menu icon"/>
+class NavBar extends React.Component {
+
+    constructor(props) {
+        super(props)
+    }
+
+
+    render() {
+            return (
+                <div className="nav-bar-div">
+                    <div className="nav-bar-top">
+                        <div className="nav-bar-menu">
+                            <img className="nav-bar-menu-icon" src={window.navLeft} alt="menu icon"/>
+                        </div>
+
+                        <Link to="/">
+                            <div className="nav-bar-logo">
+                                <img src={window.logoWhite} alt="amuzon logo" />
+                            </div>
+                        </Link>
+
+                        <div className="nav-bar-search">
+                            <input className="nav-bar-search-input" type="text"/>
+                            <img className="nav-bar-search-icon" src={window.searchIcon} />
+                        </div>
+
+                        <div className="nav-bar-right">
+                            <div className="nav-bar-right-option">
+                                <div className="nav-bar-right-option-1">
+                                    <div className="nav-bar-right-11">
+                                        Hello, Sign in
+                                    </div>
+                                    <div className="nav-bar-right-12">
+                                        Accounts & Lists
+                                    </div>
+                                </div>
+                                <div className="nav-bar-right-option-1-dropdown">
+                                    <Link to="/login">
+                                        <button className="dropdown-signin-btn">Sign in</button>
+                                    </Link>
+                                    <div className="dropdown-new-customer">
+                                        <p>New Customer?</p>
+                                        <Link to="/signup">Start here.</Link>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="nav-bar-right-option">
+                                <div className="nav-bar-right-21">
+                                    Returns
+                                </div>
+                                <div className="nav-bar-right-22">
+                                    & Orders
+                                </div>
+                            </div>
+                            <div className="nav-bar-right-option">
+                                <div className="nav-bar-right-31">
+                                    Try
+                                </div>
+                                <div className="nav-bar-right-32">
+                                    Prime
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="nav-bar-bottom">
+
+
+                    </div>
                 </div>
-                
-                <Link to="/">
-                    <div className="nav-bar-logo">
-                        <img src={window.logoWhite} alt="amuzon logo" />
-                    </div>
-                </Link>
-
-                <div className="nav-bar-search">
-                    <input className="nav-bar-search-input" type="text"/>
-                    <img className="nav-bar-search-icon" src={window.searchIcon} />
-                </div>
-
-                <div className="nav-bar-right">
-                    <div className="nav-bar-right-option">
-                        <div className="nav-bar-right-11">
-                            Hello Guest
-                        </div>
-                        <div className="nav-bar-right-12">
-                            Sign In
-                        </div>
-                    </div>
-                    <div className="nav-bar-right-option">
-                        <div className="nav-bar-right-21">
-                            Returns
-                        </div>
-                        <div className="nav-bar-right-22">
-                            & Orders
-                        </div>
-                    </div>
-                    <div className="nav-bar-right-option">
-                        <div className="nav-bar-right-31">
-                            Your
-                        </div>
-                        <div className="nav-bar-right-32">
-                            Prime
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="nav-bar-bottom">
-
-
-            </div>
-        </div>
-    )
+            )
+        }
+    
 }
 
 export default NavBar;

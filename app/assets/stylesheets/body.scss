@@ -1,12 +1,13 @@
-// .body-img {
-//     width: 100%;
-//     z-index: -1;
-//     // height: 800px;
-//     margin-bottom: -500px;
-//     // -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-//     // background: rgb(254,135,115);
-//     // -webkit-mask-image: linear-gradient(107deg, rgba(254,135,115,0.7679446778711485) 0%, rgba(254,135,115,1) 99%);
-// }
+.body-comps {
+    width: 100%;
+    z-index: -1;
+    // position: absolute;
+    // height: 800px;
+    margin-bottom: -150px;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    background: rgb(254,135,115);
+    // -webkit-mask-image: linear-gradient(107deg, rgba(254,135,115,0.7679446778711485) 0%, rgba(254,135,115,1) 99%);
+}
 
 // // .body-div {
 // //     width: 100%;
@@ -18,6 +19,10 @@
 // //     // background-image: linear-gradient(rgba(254,135,115,0.7035189075630253));
 // // }
 
+.body-div {
+    background: #EAEDED;
+}
+
 // .body-products {
 //     z-index: 1;
 // }
@@ -26,19 +31,26 @@
     display: flex;
     // align-items: center;
     justify-content: center;
-    width: 1651px;
-    height: 300px;
-    background-color: black;
+    // width: 1651px;
+    // height: 300px;
+    // background-color: black;
     // margin-left: 0;
 }
 
+// .body-products {
+//     margin-top: 300px;
+// }
+
 .body-products-top {
-    max-width: 1651px;
+    // max-width: 1651px;
     display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 5;
     // width: 100px;
     // background: red;
-    justify-content: space-between;
-    margin-top: 30px;
+    justify-content: space-around;
+    margin-top: -150px;
 }
 
 .body-products-top  div {
@@ -48,10 +60,10 @@
 }
 
 .body-products-bottom {
-    max-width: 1651px;
+    // max-width: 1651px;
     display: flex;
+    align-items: center;
     // width: 100px;
-    // background: red;
     justify-content: space-between;
     margin-top: 30px;
 }
@@ -59,5 +71,26 @@
 .body-products-bottom  div {
     background: white;
     width: 365px;
+    // height: 365px;
     // height: 465px;
 }
+
+// .product1 {
+//     background: white;
+//     width: 265px;
+// }
+
+// .product2 {
+//     background: white;
+//     width: 365px;
+// }
+
+// .product3 {
+//     background: white;
+//     width: 365px;
+// }
+
+// .product4 {
+//     background: white;
+//     width: 365px;
+// }
