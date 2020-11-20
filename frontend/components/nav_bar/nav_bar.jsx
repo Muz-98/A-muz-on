@@ -36,7 +36,7 @@ class NavBar extends React.Component {
     }
 
     render() {
-        const signinName = (this.props.currentUser) ? this.props.currentUser.username : 'Sign in'
+        const signinName = (this.props.currentUser) ? `${this.props.currentUser.username}` : 'Sign in'
 
         const logged_out_drop = () => (
             // <div className="nav-bar-right-option-1-dropdown">
@@ -54,13 +54,13 @@ class NavBar extends React.Component {
             // </div>
         )
 
-        const logged_in_drop = () => {
+        const logged_in_drop = () => (
             <>
                 <Link to="/login">
-                    <button className="dropdown-signout-btn"onClick={this.handleClick}>Sign out</button>
+                    <button className="dropdown-signout-btn" onClick={this.handleClick}>Sign out</button>
                 </Link> 
             </>
-        }
+        )
         
 
         const dropdown = (this.props.currentUser) ? logged_in_drop() : logged_out_drop()
@@ -123,10 +123,12 @@ class NavBar extends React.Component {
                                     Prime
                                 </div>
                             </div>
-                            <div className="nav-bar-right-cart">
-                                {/* <img classname="nav-bar-right-cart-img" src={window.navCart} alt="cart"/> */}
-                                {/* <strong>Cart</strong> */}
-                            </div>
+                            <Link to="/cart">
+                                <div className="nav-bar-right-cart">
+                                    <img className="nav-bar-right-cart-img" src={window.navCart} alt="cart"/> 
+                                    <strong>Cart</strong>
+                                </div>
+                            </Link>
                         </div>
                     </div>
 

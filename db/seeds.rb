@@ -12,6 +12,10 @@
 #     price: '149.99'
 # )
 
+#Demo User 
+User.create!(name: 'Jeff Bezos', email: 'bezos1994@ebay.com', password: 'amuzon')
+
+# Seed Products
 # Product.create! (
 #     name: 'Retro Kobe Bryant Lakers Jersey',
 #     description: '1996-1997 Mitchell & Ness Swingman Throwback Jersey',

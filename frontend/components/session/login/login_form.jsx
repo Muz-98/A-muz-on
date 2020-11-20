@@ -35,23 +35,26 @@ class LoginForm extends React.Component {
                 <Link to="/">
                     <img className="login-logo" src={window.logoBlack} alt='amuzon logo' />
                 </Link>
-                <form className="login-form" onSubmit={this.handleSubmit}>
-                    <h1>{this.props.formType}</h1>
-                    <h5 className="login-label-email">Email</h5>
-                    <input type="text" onChange={this.update('email')} />
-                    <h5 className="login-label-password">Password</h5>
-                    <input type="password" onChange={this.update('password')} />
+                <div className="login-form-container">
 
-                    <button className="login-form-signin-btn">Sign in</button>
-                    <div className="login-form-footer">
-                        <p className="login-form-old-user"><span>New to A-Muz-On?</span></p>
-                        <Link to="/signup">
-                        <button className="login-form-signup-btn">Create your A-Muz-On account
-                        </button>
-                        </Link>
+                    <form className="login-form" onSubmit={this.handleSubmit}>
+                        <h1>{this.props.formType}</h1>
+                        <h5 className="login-label-email">Email</h5>
+                        <input type="text" onChange={this.update('email')} />
+                        <h5 className="login-label-password">Password</h5>
+                        <input type="password" onChange={this.update('password')} />
 
-                    </div>
-                </form>
+                        <button className="login-form-signin-btn">Sign in</button>
+                    </form>
+                        <div className="login-form-footer">
+                            <p className="login-form-old-user"><span>New to A-Muz-On?</span></p>
+                            <Link to="/signup">
+                            <button className="login-form-signup-btn">Create your A-Muz-On account
+                            </button>
+                            </Link>
+
+                        </div>
+                </div>
             </div>
         )
     }
