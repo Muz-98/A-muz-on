@@ -123,11 +123,14 @@ class NavBar extends React.Component {
                                     Prime
                                 </div>
                             </div>
+                            <div className="nav-bar-right-cart">
+                                {/* <img classname="nav-bar-right-cart-img" src={window.navCart} alt="cart"/> */}
+                                {/* <strong>Cart</strong> */}
+                            </div>
                         </div>
                     </div>
 
                     <div className="nav-bar-bottom">
-
 
                     </div>
                 </div>
