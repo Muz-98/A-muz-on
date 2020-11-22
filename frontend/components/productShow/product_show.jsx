@@ -33,9 +33,18 @@ class ProductShow extends React.Component {
                                     <div>1000 ratings</div>
                                 </div>
 
-                                <div className="show-page-middle-price">
-                                    <div>Price</div>
-                                    <div>{this.props.product.price}</div>
+                                <div className="show-page-middle-price-container">
+                                    <div>Price:</div>
+                                    &nbsp;
+                                    <div className="show-page-middle-price">{this.props.product.price}</div>
+                                    &nbsp;
+                                    <div className="show-page-middle-price-prime-logo">
+                                        <img src={window.primeLogo} alt="logo"/>
+                                    </div>
+                                    &nbsp;
+                                    <div className="show-page-middle-freereturns">
+                                        & FREE Returns
+                                    </div>
                                 </div>
                             </div>
                             <div className="show-page-middle-bottom">
@@ -50,7 +59,23 @@ class ProductShow extends React.Component {
 
                         <div className="show-page-right">
                             <div className="show-page-right-price">
-                                {this.props.product.price}
+                                ${this.props.product.price}
+                            </div>
+                            <div className="show-page-right-prime-and-ship">
+                                <div className="show-page-right-prime">
+                                    <img src={window.primeLogo} alt=""/>
+                                </div>
+                                <div>& FREE Returns</div>
+
+                            </div>
+
+                            <div className="show-page-right-buttons">
+                                <div className="show-page-right-add-cart-btn">
+                                    <button className='add-to-cart-btn'>Add to Cart</button>
+                                </div>
+                                <div className="show-page-right-buynow-btn">
+                                    <button className="buy-now-btn">Buy Now</button>
+                                </div>
                             </div>
                         </div>
                     </div>
