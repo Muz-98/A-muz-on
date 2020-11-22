@@ -20,4 +20,4 @@ const mDTP = dispatch => {
     debugger 
 }
 
-export default connect(mSTP, mDTP)(ProductShow)
+export default withRouter(connect(mSTP, mDTP)(ProductShow))

@@ -1,0 +1,34 @@
+.show-page-left {
+    height: 600px; 
+  overflow: hidden;
+}
+
+.show-page-left img {
+  transition: transform .5s ease;
+}
+
+.show-page-left:hover img {
+  transform: scale(1.5);
+}
+
+.show-page-div {
+    font-family: Arial, sans-serif;
+    margin-top: 100px;
+    max-width: 1625px;
+}
+
+.show-page-top {
+    display: flex;
+    justify-content: center;
+}
+
+.show-page-middle {
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.show-page-middle-ratings {
+    display: flex;
+    // justify-content: space-around;
+}
