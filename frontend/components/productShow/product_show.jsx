@@ -27,10 +27,12 @@ class ProductShow extends React.Component {
 
                         <div className="show-page-middle">
                             <div className="show-page-middle-top">
-                                <h1>{this.props.product.name}</h1>
-                            <div className="show-page-middle-ratings">
-                                    <div>⭐</div>
-                                    <div>1000 ratings</div>
+                                <div>{this.props.product.name}</div>
+                                <div className="show-page-middle-ratings">
+                                        <div>⭐</div>
+                                        &nbsp;
+                                        &nbsp;
+                                        <div>1000 ratings</div>
                                 </div>
 
                                 <div className="show-page-middle-price-container">
@@ -46,7 +48,9 @@ class ProductShow extends React.Component {
                                         & FREE Returns
                                     </div>
                                 </div>
+                                <hr/>
                             </div>
+
                             <div className="show-page-middle-bottom">
                                 <div className="show-page-middle-description-title">
                                     About this item
@@ -58,28 +62,34 @@ class ProductShow extends React.Component {
                         </div>
 
                         <div className="show-page-right">
-                            <div className="show-page-right-price">
-                                ${this.props.product.price}
-                            </div>
-                            <div className="show-page-right-prime-and-ship">
-                                <div className="show-page-right-prime">
-                                    <img src={window.primeLogo} alt=""/>
-                                </div>
-                                <div>& FREE Returns</div>
+                            <div className="show-page-right-inner">
+                                <div className="show-page-right-container">
+                                    <div className="show-page-right-price">
+                                        ${this.props.product.price}
+                                    </div>
+                                    <div className="show-page-right-prime-and-ship">
+                                        <div className="show-page-right-prime">
+                                            <img src={window.primeLogo} alt=""/>
+                                        </div>
+                                        &nbsp;
+                                        <div>& FREE Returns</div>
 
-                            </div>
+                                    </div>
 
-                            <div className="show-page-right-buttons">
-                                <div className="show-page-right-add-cart-btn">
-                                    <button className='add-to-cart-btn'>Add to Cart</button>
+                                    <div className="show-page-right-buttons">
+                                        <div className="show-page-right-add-cart-btn">
+                                            <button className='add-to-cart-btn'>Add to Cart</button>
+                                        </div>
+                                        <div className="show-page-right-buynow-btn">
+                                            <button className="buy-now-btn">Buy Now</button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="show-page-right-buynow-btn">
-                                    <button className="buy-now-btn">Buy Now</button>
-                                </div>
+
                             </div>
                         </div>
                     </div>
-
+                    <hr className="show-page-top-bottom-line"/>
                     <div className="show-page-bottom">
 
                     </div>
