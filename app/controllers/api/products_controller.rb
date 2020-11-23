@@ -10,3 +10,11 @@ class Api::ProductsController < ApplicationController
         render :index
     end
 end
+
+
+# def search 
+#     @product = Product.where('name LIKE %(?)% OR description', params[:query], params[:query])
+#     render :index
+# end
+
+# debouncing 

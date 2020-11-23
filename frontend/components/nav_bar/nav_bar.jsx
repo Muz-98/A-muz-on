@@ -79,6 +79,9 @@ class NavBar extends React.Component {
                         </Link>
 
                         <div className="nav-bar-search">
+                            {/* <SearchBar/>
+                            <form> */}
+
                             <input className="nav-bar-search-input" type="text"/>
                             <img className="nav-bar-search-icon" src={window.searchIcon} />
                         </div>
