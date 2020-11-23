@@ -133,7 +133,19 @@ class NavBar extends React.Component {
                     </div>
 
                     <div className="nav-bar-bottom">
+                        <div className="deliver-container">
+                            <img src={window.navbarLoc} />
+                            &nbsp;
+                            <div className="deliver-address">
+                                <div className="deliver-address-top">
+                                    Deliver to Muz
+                                </div>
 
+                                <div className="deliver-address-bottom">
+                                    New York 12345
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             )

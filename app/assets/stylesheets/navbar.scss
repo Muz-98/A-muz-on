@@ -245,3 +245,33 @@ cursor: pointer;
     position: sticky;
     background-color: #23303E;
 }
+
+.deliver-container {
+    display: flex;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin-left: 10px;
+    border: transparent 1px solid;
+    width: 175px;
+    margin-bottom: 5px;
+}
+
+.deliver-container:hover {
+    border: 1px solid white;
+    cursor: pointer;
+}
+
+.deliver-container img {
+    // width: 32px;
+    height: 37px;
+    padding-top: 3px;
+}
+
+.deliver-address-top {
+    font-size: 14px;
+}
+
+.deliver-address-bottom {
+    font-size: 16px;
+    font-weight: 700;
+}

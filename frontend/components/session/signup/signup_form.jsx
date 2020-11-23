@@ -24,7 +24,9 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        if (this.props.processForm(user)) {
+            this.props.history.push("/")
+        };
     }
 
     render() {
@@ -44,7 +46,7 @@ class SignupForm extends React.Component {
                     <h5 className="signup-label-password">Password</h5>
                         <input type="password" onChange={this.update('password')}/>
                     {/* <Link to="/"> */}
-                        <button className="create-account-btn">Create your A-Muz-On account</button>
+                        <button type="submit" className="create-account-btn">Create your A-Muz-On account</button>
                     {/* </Link> */}
                 </form>
                     <p className="TermsNCond">By creating an account, you agree to A-Muz-On's Conditions of Use and Privacy Notice.</p>

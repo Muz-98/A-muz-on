@@ -457,7 +457,17 @@ var NavBar = /*#__PURE__*/function (_React$Component) {
         alt: "cart"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("strong", null, "Cart"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-bar-bottom"
-      }));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "deliver-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: window.navbarLoc
+      }), "\xA0", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "deliver-address"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "deliver-address-top"
+      }, "Deliver to Muz"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "deliver-address-bottom"
+      }, "New York 12345")))));
     }
   }]);
 
@@ -990,7 +1000,12 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
-      this.props.processForm(user);
+
+      if (this.props.processForm(user)) {
+        this.props.history.push("/");
+      }
+
+      ;
     }
   }, {
     key: "render",
@@ -1024,6 +1039,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         type: "password",
         onChange: this.update('password')
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "submit",
         className: "create-account-btn"
       }, "Create your A-Muz-On account")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "TermsNCond"
