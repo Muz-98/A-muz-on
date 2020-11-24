@@ -138,7 +138,7 @@ var fetchProduct = function fetchProduct(productId) {
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, receiveCurrentUser, logoutCurrentUser, receiveErrors, signup, login, logout */
+/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, receiveCurrentUser, logoutCurrentUser, receiveErrors, signup, login, logout, loginDemoUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -152,6 +152,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loginDemoUser", function() { return loginDemoUser; });
 /* harmony import */ var _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/session_api_util */ "./frontend/util/session_api_util.js");
 
 var RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
@@ -194,6 +195,13 @@ var logout = function logout() {
   return function (dispatch) {
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["logout"]().then(function (user) {
       return dispatch(logoutCurrentUser());
+    });
+  };
+};
+var loginDemoUser = function loginDemoUser() {
+  return function (dispatch) {
+    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["demoLogin"]().then(function (user) {
+      return dispatch(receiveCurrentUser(user));
     });
   };
 };
@@ -853,6 +861,8 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this4 = this;
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -879,6 +889,13 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "login-form-signin-btn"
       }, "Sign in")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-form-demo-user"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "login-form-demo-user-btn",
+        onClick: function onClick() {
+          return _this4.props.loginDemoUser();
+        }
+      }, "DEMO USER")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form-footer"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "login-form-old-user"
@@ -924,6 +941,9 @@ var mDTP = function mDTP(dispatch) {
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["login"])(user));
+    },
+    loginDemoUser: function loginDemoUser() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["loginDemoUser"])());
     }
   };
 };
@@ -1545,7 +1565,7 @@ var ProtectedRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withR
 /*!*******************************************!*\
   !*** ./frontend/util/session_api_util.js ***!
   \*******************************************/
-/*! exports provided: signup, login, logout */
+/*! exports provided: signup, login, logout, demoLogin */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1553,6 +1573,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "demoLogin", function() { return demoLogin; });
 var signup = function signup(user) {
   return $.ajax({
     method: "POST",
@@ -1584,6 +1605,18 @@ var logout = function logout() {
   return $.ajax({
     method: "DELETE",
     url: "/api/session"
+  });
+};
+var demoLogin = function demoLogin() {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/session',
+    data: {
+      user: {
+        email: 'bezos1994@ebay.com',
+        password: 'amuzon'
+      }
+    }
   });
 };
 

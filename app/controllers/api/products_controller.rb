@@ -9,12 +9,18 @@ class Api::ProductsController < ApplicationController
         @products = Product.all 
         render :index
     end
+
+    def search
+        @products = Product.search(search_params)
+        render :search_results
+    end
+
+    private 
+
+    def search_params
+        params.require(:search).permit(title: "", description: "")
+    end
+    
 end
 
 
-# def search 
-#     @product = Product.where('name LIKE %(?)% OR description', params[:query], params[:query])
-#     render :index
-# end
-
-# debouncing 

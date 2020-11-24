@@ -29,3 +29,17 @@ export const logout = () => {
         url: "/api/session"
     })
 }
+
+export const demoLogin = () => (
+    $.ajax({
+        method: 'POST',
+        url: 'api/session',
+        data: {
+            user:
+            {
+                email: 'bezos1994@ebay.com',
+                password: 'amuzon',
+            }
+        }
+    })
+)

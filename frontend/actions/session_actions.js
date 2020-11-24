@@ -40,3 +40,11 @@ export const logout = () => dispatch => (
         dispatch(logoutCurrentUser())
     ))
 );
+
+export const loginDemoUser = () => dispatch => (
+    APIUtil.demoLogin().then(user => (
+        dispatch(receiveCurrentUser(user))
+
+    )
+    )
+);

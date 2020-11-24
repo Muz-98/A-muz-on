@@ -123,14 +123,14 @@ nflArod.photos.attach(io: image29, filename: 'AaronRodgersNFL2.jpg')
 nflRussell.photos.attach(io: image30, filename: 'RussellWilsonNFL1.jpg')
 nflRussell.photos.attach(io: image31, filename: 'RussellWilsonNFL2.jpg')
 
-nflObj.photos.attach(io: image12, filename: 'OdellNFL1.jpg')
-nflObj.photos.attach(io: image13, filename: 'OdellNFL2.jpg')
+nflObj.photos.attach(io: image32, filename: 'OdellNFL1.jpg')
+nflObj.photos.attach(io: image33, filename: 'OdellNFL2.jpg')
 
-nflBrady.photos.attach(io: image12, filename: 'TomBradyNFL1.jpeg')
-nflBrady.photos.attach(io: image13, filename: 'TomBradyNFL2.jpeg')
+nflBrady.photos.attach(io: image34, filename: 'TomBradyNFL1.jpeg')
+nflBrady.photos.attach(io: image35, filename: 'TomBradyNFL2.jpeg')
 
-nflKamara.photos.attach(io: image12, filename: 'KamaraNFL1.jpeg')
-nflKamara.photos.attach(io: image13, filename: 'KamaraNFL2.jpeg')
+nflKamara.photos.attach(io: image36, filename: 'KamaraNFL1.jpeg')
+nflKamara.photos.attach(io: image37, filename: 'KamaraNFL2.jpeg')
 
-nflDeshaun.photos.attach(io: image12, filename: 'DeshaunWatsonNFL1.jpeg')
-nflDeshaun.photos.attach(io: image13, filename: 'DeshaunWatsonNFL2.jpg')
+nflDeshaun.photos.attach(io: image38, filename: 'DeshaunWatsonNFL1.jpeg')
+nflDeshaun.photos.attach(io: image39, filename: 'DeshaunWatsonNFL2.jpg')

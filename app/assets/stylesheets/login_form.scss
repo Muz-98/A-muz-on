@@ -73,10 +73,27 @@
   border: 0.5px solid #aaaaaa;
   border-radius:3px;
   margin-top: 10px;
+  box-shadow: 0 1px 0 rgba(255,255,255,.6) inset;
 }
 
 .login-form-signin-btn:hover{
 background: linear-gradient(#F5D68A, #EEBA36);
+}
+
+.login-form-demo-user-btn {
+  width:315px;
+  height:33px;
+  font-size:14px;
+  background: linear-gradient(#F6C992, #ED9222);
+  border: 0.5px solid #aaaaaa;
+  border-radius:3px;
+  margin-top: 10px;
+  box-shadow: 0 1px 0 rgba(255,255,255,.6) inset;
+}
+
+.login-form-demo-user-btn:hover {
+    background: linear-gradient(#F4BE7B, #E18614);
+    cursor: pointer; 
 }
 
 // .TermsNCond {

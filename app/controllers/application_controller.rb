@@ -19,8 +19,7 @@ class ApplicationController < ActionController::Base
     !!current_user 
   end
 
-  
-#   def ensure_logged_in
-#     redender  unless logged_in?
-#   end
+  def ensure_logged_in
+    render json: ["Invalid user"], status: 404 unless logged_in?
+  end
 end
