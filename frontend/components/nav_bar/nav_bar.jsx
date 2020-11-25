@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import SearchBar from './search_bar/search_bar_container'
 
 // const NavBar = (props) => {
 
@@ -79,11 +80,11 @@ class NavBar extends React.Component {
                         </Link>
 
                         <div className="nav-bar-search">
-                            {/* <SearchBar/>
-                            <form> */}
+                            <SearchBar/>
+                        
 
-                            <input className="nav-bar-search-input" type="text"/>
-                            <img className="nav-bar-search-icon" src={window.searchIcon} />
+                            {/* <input className="nav-bar-search-input" type="text"/>
+                            <img className="nav-bar-search-icon" src={window.searchIcon} /> */}
                         </div>
 
                         <div className="nav-bar-right">

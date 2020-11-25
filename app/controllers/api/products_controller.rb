@@ -11,15 +11,15 @@ class Api::ProductsController < ApplicationController
     end
 
     def search
-        @products = Product.search(search_params)
+        @products = Product.get_search(search_params)
         render :search_results
     end
 
-    private 
+    # private 
 
-    def search_params
-        params.require(:search).permit(title: "", description: "")sea
-    end
+    # def search_params
+    #     params.require(:search).permit(title: "", description: "")
+    # end
     
 end
 

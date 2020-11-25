@@ -22,7 +22,8 @@ class ProductShow extends React.Component {
                     <div className="show-page-top">
 
                         <div className="show-page-left">
-                            <img src={window.kobePic} alt="Kobe Jersey"/>
+                            {/* <img src={window.kobePic} alt="Kobe Jersey"/> */}
+                            <img src={this.props.product.photos[0]} alt=""/>
                         </div>
 
                         <div className="show-page-middle">
