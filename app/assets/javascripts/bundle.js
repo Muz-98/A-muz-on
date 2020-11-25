@@ -579,6 +579,7 @@ var mDTP = function mDTP(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -603,58 +604,55 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var SearchBar = /*#__PURE__*/function (_React$Component) {
   _inherits(SearchBar, _React$Component);
 
   var _super = _createSuper(SearchBar);
 
-  function SearchBar(props) {
-    var _this;
-
+  function SearchBar() {
     _classCallCheck(this, SearchBar);
 
-    _this = _super.call(this, props);
-    _this.state = {
-      query: ''
-    };
-    _this.handleInput = _this.handleInput.bind(_assertThisInitialized(_this));
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    return _this;
+    return _super.apply(this, arguments);
   }
 
   _createClass(SearchBar, [{
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      e.preventDefault(); // if (this.props.history)
-
-      console.log(this.props);
-      this.props.fetchSearchResults(this.state.query);
-    }
-  }, {
-    key: "handleInput",
-    value: function handleInput(e) {
-      e.preventDefault();
-      this.setState({
-        query: e.currentTarget.value
-      });
-    }
-  }, {
     key: "render",
+    // constructor(props) {
+    //     super(props)
+    //     this.state = { query: ''}
+    //     this.handleInput = this.handleInput.bind(this)
+    //     this.handleSubmit = this.handleSubmit.bind(this)
+    // }
+    // handleSubmit(e) {
+    //     e.preventDefault();
+    //     // if (this.props.history)
+    //     console.log(this.props)
+    //     this.props.fetchSearchResults(this.state.query).then(() => {
+    //         this.props.history.push(`/search?${query}`)
+    //     })
+    // }
+    // handleInput(e) {
+    //     e.preventDefault();
+    //     this.setState({query: e.currentTarget.value})
+    // }
+    // render() {
+    //     return (
+    //         <form onSubmit={this.handleSubmit}>
+    //             <input type='text' value={this.state.query} onChange={this.handleInput}></input>
+    //             <button>Search</button>
+    //         </form>
+    //     )
+    // }
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        value: this.state.query,
-        onChange: this.handleInput
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Search"));
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
     }
   }]);
 
   return SearchBar;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (SearchBar);
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(SearchBar));
 
 /***/ }),
 
