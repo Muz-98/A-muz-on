@@ -14,7 +14,7 @@ class ProductShow extends React.Component {
 
     render() {
         if (this.props.product === undefined) return null
-        
+        debugger 
         return (
             <div>
                 <NavBar />

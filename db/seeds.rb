@@ -83,8 +83,8 @@ retroKobe.photos.attach(io: image3, filename: 'KobeRetro1.jpg')
 retroMJ.photos.attach(io: image4, filename: 'MichaelJordanRetro1.jpg')
 retroMJ.photos.attach(io: image5, filename: 'MichaelJordanRetro2.jpg')
 
-retroLary.photos.attach(io: image6, filename: 'LaryBirdRetro1.jpg')
-retroLary.photos.attach(io: image7, filename: 'LaryBirdRetro2.jpeg')
+retroLarry.photos.attach(io: image6, filename: 'LaryBirdRetro1.jpg')
+retroLarry.photos.attach(io: image7, filename: 'LaryBirdRetro2.jpeg')
 
 retroMagic.photos.attach(io: image8, filename: 'MagicJohnsonRetro1.jpg')
 retroMagic.photos.attach(io: image9, filename: 'MagicJohnsonRetro2.jpg')

@@ -18,7 +18,7 @@ class Api::ProductsController < ApplicationController
     private 
 
     def search_params
-        params.require(:search).permit(title: "", description: "")
+        params.require(:search).permit(title: "", description: "")sea
     end
     
 end

@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     resources :users, only:[:create]
     resource :session, only:[:create, :destroy]
     resources :products, only: [:show, :index]
+    get "/products/search", to: "products#search"
+
     resource :cart, only: [:show]
   end
   

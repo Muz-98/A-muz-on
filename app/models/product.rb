@@ -13,12 +13,13 @@ class Product < ApplicationRecord
 
     has_many_attached :photos
 
-    def self.search(search_params)
-        search_title = search_params[:title]
-        search_description = search_params[:description]
-        total_search = search_title + search_description 
+    def self.search(query)
+        # search_title = search_params[:title]
+        # search_description = search_params[:description]
+        # total_search = search_title + search_description
 
+        names_search = names.map{|n| "name LIKE '%#{n}%'"}.join(" OR ")
         Product 
-            .where("name LIKE '%(?)%' OR description LIKE '%(?)%'", search_title, search_description)
+            .where(names_search)
     end
 end
