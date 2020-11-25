@@ -13,7 +13,7 @@ class Product < ApplicationRecord
 
     has_many_attached :photos
 
-    def self.get_search(query)
+    def self.search_by(query)
         # search_title = search_params[:title]
         # search_description = search_params[:description]
         # total_search = search_title + search_description

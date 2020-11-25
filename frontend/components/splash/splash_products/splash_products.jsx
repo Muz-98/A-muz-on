@@ -9,7 +9,7 @@ class SplashProducts extends React.Component {
     render() {
        if (this.props.products[1] === undefined) return null 
 
-       debugger 
+    //    debugger 
         return (
             <div className="product-div">
                 <div className="product-name">

@@ -11,7 +11,8 @@ class Api::ProductsController < ApplicationController
     end
 
     def search
-        @products = Product.get_search(search_params)
+        # debugger 
+        @products = Product.search_by(params[:search])
         render :search_results
     end
 
