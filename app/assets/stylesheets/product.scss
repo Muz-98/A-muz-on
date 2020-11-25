@@ -24,10 +24,10 @@
     margin: auto;
 }
 
-.product-image {
-    max-height: 200px;
-    width: 100%;
-    object-fit: contain;
+.product-image img {
+    max-height: 100px;
+    // width: 100%;
+    // object-fit: contain;
     margin-bottom: 15px;
 }
 

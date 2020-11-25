@@ -1,5 +1,5 @@
 import React from 'react'
-import Product from '../product/product';
+import SplashProducts from '../splash_products/splash_products_container';
 
 
 const Body = () => {
@@ -12,19 +12,19 @@ const Body = () => {
 
             <div className="body-products-top">
                 <div className="product1">
-                    <Product />
+                        <SplashProducts />
 
                 </div>
                     <div className="product2">
-                    <Product />
+                        <SplashProducts />
 
                 </div>
                     <div className="product3">
-                    <Product />
+                        <SplashProducts />
 
                 </div>
                     <div className="product4">
-                    <Product />
+                        <SplashProducts />
 
                 </div>
 
@@ -32,19 +32,19 @@ const Body = () => {
 
             <div className="body-products-bottom">
                 <div>
-                    <Product />
+                        <SplashProducts />
 
                 </div>
                 <div>
-                    <Product />
+                        <SplashProducts />
 
                 </div>
                 <div>
-                    <Product />
+                        <SplashProducts />
 
                 </div>
                 <div>
-                    <Product />
+                        <SplashProducts />
 
                 </div>
 

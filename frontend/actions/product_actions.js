@@ -12,9 +12,16 @@ const receiveProduct = (product) => {
     }
 }
 
+const receiveAllProducts = products => {
+    return {
+        type: RECEIVE_ALL_PRODUCTS,
+        products
+    }
+}
+
 export const fetchProducts = () => {
     return dispatch => {
-       return ProductAPIUtil.fetchProducts().then(products => dispatch({type: RECEIVE_ALL_PRODUCTS, products}))
+       return ProductAPIUtil.fetchProducts().then(products => dispatch(receiveAllProducts(products)))
     }
 }
 
