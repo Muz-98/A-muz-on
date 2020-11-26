@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBarContainer from '../nav_bar/nav_bar_container'
-import Body from './body/body'
+import Body from './body/body_container'
 
 
 const SplashPage = props => {
