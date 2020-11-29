@@ -2,7 +2,7 @@ import React from 'react'
 import SplashProducts from '../splash_products/splash_products_container';
 
 
-class Body extends React.Component {
+class Home extends React.Component {
     componentDidMount() {
         debugger 
         this.props.fetchProducts()
@@ -53,4 +53,4 @@ class Body extends React.Component {
     }
 }
 
-export default Body;
+export default Home;

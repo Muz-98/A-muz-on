@@ -52,6 +52,14 @@ attr_reader :password
 
 	def self.generate_session_token
 		SecureRandom::urlsafe_base64
-	end
+    end
+    
+    has_one :cart,
+    class_name: :Cart,
+    foreign_key: :user_id
+
+    has_many :cart_products,
+    through: :cart,
+    through: :cart_products
 
 end

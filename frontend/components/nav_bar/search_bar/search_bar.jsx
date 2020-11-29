@@ -13,7 +13,6 @@ class SearchBar extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         // if (this.props.history)
-        console.log(this.props)
         this.props.fetchSearchResults(this.state.query).then(() => {
             this.props.history.push(`/search`)
         })
@@ -26,9 +25,9 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <input type='text' value={this.state.query} onChange={this.handleInput}></input>
-                <button>Search</button>
+            <form className="nav-bar-search" onSubmit={this.handleSubmit}>
+                <input type='text' value={this.state.query} onChange={this.handleInput} className="nav-bar-search-input"></input>
+                <img className="nav-bar-search-icon" src={window.searchIcon} />
             </form>
         )
     }

@@ -21,6 +21,7 @@
 
 .body-div {
     background: #EAEDED;
+    font-family: Arial, sans-serif;
 }
 
 // .body-products {
@@ -41,7 +42,7 @@
     margin: -10px;
 }
 
-.body-products-top {
+.body-products-top ul {
     // max-width: 1651px;
     display: flex;
     align-items: center;
@@ -59,11 +60,9 @@
     // height: 465px;
 }
 
-.body-products-bottom {
-    // max-width: 1651px;
+.body-products-bottom ul{
     display: flex;
     align-items: center;
-    // width: 100px;
     justify-content: space-around;
     margin-top: 30px;
 }
@@ -75,22 +74,4 @@
     // height: 465px;
 }
 
-// .product1 {
-//     background: white;
-//     width: 265px;
-// }
 
-// .product2 {
-//     background: white;
-//     width: 365px;
-// }
-
-// .product3 {
-//     background: white;
-//     width: 365px;
-// }
-
-// .product4 {
-//     background: white;
-//     width: 365px;
-// }

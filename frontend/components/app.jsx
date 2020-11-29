@@ -5,7 +5,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util'
 import SignupForm from "./session/signup/signup_form_container"
 import LoginForm from './session/login/login_form_container'
 import ProductShow from './productShow/product_show_container'
-import SearchResults from './search_results/search_results'
+import SearchResults from './search_results/search_results_container'
 
 const App = () => (
     <div>
