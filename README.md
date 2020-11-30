@@ -30,7 +30,7 @@ past and present, with the added convenience of prime shipping!
 
 
 ### Search Bar 
-* Used Active Record to query the database and React Components display search results to user 
+* Used Active Record to query the database and React Components to display search results to user 
 
 ![NavBar](https://github.com/Muz-98/A-muz-on/blob/master/app/assets/images/navBarSnip.png)
 
