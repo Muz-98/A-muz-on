@@ -9,6 +9,7 @@ past and present, with the added convenience of prime shipping!
 ## Technology Used 
 * Frontend: React/Redux, Javascript, HTML5, CSS3
 * Backend: Ruby, Ruby on Rails, PostgresSQL
+* AWS was used for image hosting
 
 
 ## Key Features 
