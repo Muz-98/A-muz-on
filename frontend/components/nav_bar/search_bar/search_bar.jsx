@@ -27,7 +27,7 @@ class SearchBar extends React.Component {
         return (
             <form className="nav-bar-search" onSubmit={this.handleSubmit}>
                 <input type='text' value={this.state.query} onChange={this.handleInput} className="nav-bar-search-input"></input>
-                <img className="nav-bar-search-icon" src={window.searchIcon} />
+                <img onClick={this.handleSubmit} className="nav-bar-search-icon" src={window.searchIcon} />
             </form>
         )
     }

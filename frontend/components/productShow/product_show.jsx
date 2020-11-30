@@ -14,52 +14,53 @@ class ProductShow extends React.Component {
 
     render() {
         if (this.props.product === undefined) return null
-        debugger 
         return (
             <div>
                 <NavBar />
                 <div className="show-page-div">
                     <div className="show-page-top">
+                        <div className="show-page-middle-left-cont">
 
-                        <div className="show-page-left">
-                            {/* <img src={window.kobePic} alt="Kobe Jersey"/> */}
-                            <img src={this.props.product.photos[0]} alt=""/>
-                        </div>
-
-                        <div className="show-page-middle">
-                            <div className="show-page-middle-top">
-                                <div>{this.props.product.name}</div>
-                                <div className="show-page-middle-ratings">
-                                        <div>⭐</div>
-                                        &nbsp;
-                                        &nbsp;
-                                        <div>1000 ratings</div>
+                                <div className="show-page-left">
+                                    {/* <img src={window.kobePic} alt="Kobe Jersey"/> */}
+                                    <img src={this.props.product.photos[0]} alt=""/>
                                 </div>
 
-                                <div className="show-page-middle-price-container">
-                                    <div>Price:</div>
-                                    &nbsp;
-                                    <div className="show-page-middle-price">{this.props.product.price}</div>
-                                    &nbsp;
-                                    <div className="show-page-middle-price-prime-logo">
-                                        <img src={window.primeLogo} alt="logo"/>
+                                <div className="show-page-middle">
+                                    <div className="show-page-middle-top">
+                                        <div>{this.props.product.name}</div>
+                                        {/* <div className="show-page-middle-ratings">
+                                                <div>⭐</div>
+                                                &nbsp;
+                                                &nbsp;
+                                                <div>1000 ratings</div>
+                                        </div> */}
+
+                                        <div className="show-page-middle-price-container">
+                                            <div className="show-page-price-text">Price:</div>
+                                            &nbsp;
+                                            <div className="show-page-middle-price">{this.props.product.price}</div>
+                                            &nbsp;
+                                            <div className="show-page-middle-price-prime-logo">
+                                                <img src={window.primeLogo} alt="logo"/>
+                                            </div>
+                                            &nbsp;
+                                            <div className="show-page-middle-freereturns">
+                                                & FREE Returns
+                                            </div>
+                                        </div>
+                                        <hr/>
                                     </div>
-                                    &nbsp;
-                                    <div className="show-page-middle-freereturns">
-                                        & FREE Returns
+
+                                    <div className="show-page-middle-bottom">
+                                        <div className="show-page-middle-description-title">
+                                            About this item
+                                        </div>
+                                        <ul className="show-page-middle-description">
+                                            <li>{this.props.product.description}</li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <hr/>
-                            </div>
-
-                            <div className="show-page-middle-bottom">
-                                <div className="show-page-middle-description-title">
-                                    About this item
-                                </div>
-                                <ul className="show-page-middle-description">
-                                    <li>{this.props.product.description}</li>
-                                </ul>
-                            </div>
                         </div>
 
                         <div className="show-page-right">
@@ -76,7 +77,13 @@ class ProductShow extends React.Component {
                                         <div>& FREE Returns</div>
 
                                     </div>
+                                    <div className="delivery-time">
+                                        FREE delivery: <strong>Tomorrow</strong>
+                                    </div>
 
+                                    <div className="show-page-right-instock">
+                                        In Stock.
+                                    </div>
                                     <div className="show-page-right-buttons">
                                         <div className="show-page-right-add-cart-btn">
                                             <button className='add-to-cart-btn'>Add to Cart</button>
@@ -90,9 +97,15 @@ class ProductShow extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <hr className="show-page-top-bottom-line"/>
+                    
                     <div className="show-page-bottom">
+                        <h3>
+                            About this item
+                        </h3>
 
+                        <div className="show-page-bottom-description">
+                            {this.props.product.description}
+                        </div>
                     </div>
 
 

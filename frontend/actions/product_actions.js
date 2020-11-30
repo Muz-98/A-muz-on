@@ -4,7 +4,6 @@ export const RECEIVE_ALL_PRODUCTS = "RECEIVE_ALL_PRODUCTS"
 export const RECEIVE_PRODUCT = "RECEIVE_PRODUCT"
 
 const receiveProduct = (product) => {
-    debugger 
     return {
         type: RECEIVE_PRODUCT,
         product
@@ -25,11 +24,9 @@ export const fetchProducts = () => {
     }
 }
 
-export const fetchProduct = (productId) => {
-    debugger 
+export const fetchProduct = (productId) => { 
     return dispatch => {
        return ProductAPIUtil.fetchProduct(productId).then(product => {
-           debugger
            return dispatch(receiveProduct(product))
        })
     }

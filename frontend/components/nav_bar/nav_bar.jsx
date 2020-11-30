@@ -63,7 +63,7 @@ class NavBar extends React.Component {
             </>
         )
         
-
+        const displayName = (this.props.currentUser) ? this.props.currentUser.username : 'Guest'
         const dropdown = (this.props.currentUser) ? logged_in_drop() : logged_out_drop()
 
             return (
@@ -75,7 +75,7 @@ class NavBar extends React.Component {
 
                         <Link to="/">
                             <div className="nav-bar-logo">
-                                <img src={window.logoWhite} alt="amuzon logo" />
+                                <img src={window.amuzonWhite} alt="amuzon logo" />
                             </div>
                         </Link>
 
@@ -142,7 +142,7 @@ class NavBar extends React.Component {
                             &nbsp;
                             <div className="deliver-address">
                                 <div className="deliver-address-top">
-                                    Deliver to Muz
+                                    Deliver to {displayName}
                                 </div>
 
                                 <div className="deliver-address-bottom">

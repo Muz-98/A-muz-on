@@ -35,7 +35,7 @@ class LoginForm extends React.Component {
             <div className="login-div">
                 {/* <img src='../../../../app/assets/images/AMUZON Logo.png'/> */}
                 <Link to="/">
-                    <img className="login-logo" src={window.logoBlack} alt='amuzon logo' />
+                    <img className="login-logo" src={window.amuzonBlack} alt='amuzon logo' />
                 </Link>
                 <div className="login-form-container">
 

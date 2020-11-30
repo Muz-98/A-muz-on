@@ -1,6 +1,5 @@
 class Api::ProductsController < ApplicationController
     def show
-        # debugger 
         @product = Product.find(params[:id])
         render :show
     end
@@ -11,7 +10,6 @@ class Api::ProductsController < ApplicationController
     end
 
     def search
-        # debugger 
         @products = Product.search_by(params[:search])
         render :search_results
     end

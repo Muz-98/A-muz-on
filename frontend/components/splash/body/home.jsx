@@ -4,7 +4,6 @@ import SplashProducts from '../splash_products/splash_products_container';
 
 class Home extends React.Component {
     componentDidMount() {
-        debugger 
         this.props.fetchProducts()
     }
 

@@ -1,5 +1,8 @@
 .footer {
     font-family: Arial, sans-serif;
+    // position: absolute;
+    // bottom: 0;
+    // width: 100%;
 }
 
 .footer-top {
@@ -60,4 +63,8 @@
 .footer-bottom-logos img {
     width: 30px;
     margin-right: 5px;
+}
+
+.show-page-bottom h3 {
+    color: #CC6600;
 }

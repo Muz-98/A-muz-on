@@ -33,7 +33,7 @@ class SignupForm extends React.Component {
         return (
             <div className="signup-div">
                 <Link to="/">
-                    <img className="signup-logo" src={window.logoBlack} alt='amuzon logo'/>
+                    <img className="signup-logo" src={window.amuzonBlack} alt='amuzon logo'/>
                 </Link>
                 <div className="signup-form-container">
 
