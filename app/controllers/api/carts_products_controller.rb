@@ -5,31 +5,30 @@ class Api::CartsProductsController < ApplicationController
 
         if @cartProduct 
             @cartProduct.quantity += 1 
-            #  @max_quantity = false
-            #         if @cartProduct.quantity > 10
-            #             @max_quantity = true
-            #             @cartProduct.quantity = 10 # capping quantity to 10
-            #         end
-        else # create a new shopping cart item
+        else 
             @cartProduct = CartsProducts.new(cart_params)
         end
-
 
         if @cartproduct.save
             render "api/cart/show"
         else
-            render json: @cartproduct.errors.full_messages, status: 401
+            render json: @cartproduct.errors.full_messages, status: 422
         end
     end
 
     def update
+        @cartProduct = ShoppingCartItem.find_by(id: params[:id])
+        if @cartProduct.update(cart_params)
+            render "api/cart/show"
+        else
+            render json: @cartProduct.errors.full_messages, status: 422
+        end
     end
 
     def destroy
     end
 
     private 
-
     def cart_params
         params.require(:cartproduct).permit(:product_id, :quantity)
     end
