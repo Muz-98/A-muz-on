@@ -15,9 +15,27 @@ past and present, with the added convenience of prime shipping!
 
 ### Full User Authentication
 
-`Code Snippets`:
+* Implemented bootstrapping to keep track of session status, and current User. 
+* Auth and Protected routes were used to ensure key features were only accessible to logged in users
 
+`Code Snippets`:
+#### Backend Auth
 ![Backend Auth](https://github.com/Muz-98/A-muz-on/blob/master/app/assets/images/backendAuth.png)
+
+#### Frontend Auth
 ![Frontend Auth](https://github.com/Muz-98/A-muz-on/blob/master/app/assets/images/frontendAuth.png)
+
+#### Pixel perfect Sign up page
+![Signup](https://github.com/Muz-98/A-muz-on/blob/master/app/assets/images/signupPage.png)
+
+
+### Search Bar 
+* Used Active Record to query the database and React Components display search results to user 
+
+![NavBar](https://github.com/Muz-98/A-muz-on/blob/master/app/assets/images/navBarSnip.png)
+
+![SearchResults](https://github.com/Muz-98/A-muz-on/blob/master/app/assets/images/searchResults.png)
+
+
 
 
