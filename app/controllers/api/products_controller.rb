@@ -14,12 +14,7 @@ class Api::ProductsController < ApplicationController
         render :search_results
     end
 
-    # private 
 
-    # def search_params
-    #     params.require(:search).permit(title: "", description: "")
-    # end
-    
 end
 
 

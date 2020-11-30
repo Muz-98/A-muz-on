@@ -28,7 +28,7 @@ class ProductShow extends React.Component {
 
                                 <div className="show-page-middle">
                                     <div className="show-page-middle-top">
-                                        <div>{this.props.product.name}</div>
+                                        <div className="show-page-middle-product-name">{this.props.product.name}</div>
                                         {/* <div className="show-page-middle-ratings">
                                                 <div>⭐</div>
                                                 &nbsp;
@@ -49,7 +49,7 @@ class ProductShow extends React.Component {
                                                 & FREE Returns
                                             </div>
                                         </div>
-                                        <hr/>
+                                   
                                     </div>
 
                                     <div className="show-page-middle-bottom">
@@ -108,7 +108,11 @@ class ProductShow extends React.Component {
                         </div>
                     </div>
 
-
+                    <div className="show-page-reviews-container">
+                        <h3 className="show-page-reviews-title">
+                            Reviews 
+                        </h3>
+                    </div>
                 </div>
             </div>
         )
