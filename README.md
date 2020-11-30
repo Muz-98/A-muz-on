@@ -1,24 +1,23 @@
-# README
+# A-muz-on
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[A-muz-on](a-muz-on.herokuapp.com)
 
-Things you may want to cover:
+## `Description`
+A-muz-on, is a clone of the popular online marketplace Amazon. It is a place users can shop for their favorite jerseys, 
+past and present, with the added convenience of prime shipping! 
 
-* Ruby version
+## Technology Used 
+* Frontend: React/Redux, Javascript, HTML5, CSS3
+* Backend: Ruby, Ruby on Rails, PostgresSQL
 
-* System dependencies
 
-* Configuration
+## Key Features 
 
-* Database creation
+### Full User Authentication
 
-* Database initialization
+`Code Snippets`:
 
-* How to run the test suite
+![Backend Auth](https://github.com/Muz-98/A-muz-on/blob/master/app/assets/images/backendAuth.png)
+![Frontend Auth](https://github.com/Muz-98/A-muz-on/blob/master/app/assets/images/frontendAuth.png)
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...

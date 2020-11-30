@@ -2264,12 +2264,7 @@ var signup = function signup(user) {
     url: "/api/users",
     data: {
       user: user
-    } // user: {
-    //     username: user.username,
-    //     password: user.password
-    // }
-    // }
-
+    }
   });
 };
 var login = function login(user) {
@@ -2278,11 +2273,7 @@ var login = function login(user) {
     url: "/api/session",
     data: {
       user: user
-    } // user: {
-    //     username: user.username,
-    //     password: user.password           
-    // } 
-
+    }
   });
 };
 var logout = function logout() {

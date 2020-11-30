@@ -3,11 +3,6 @@ export const signup = (user) => {
         method: "POST",
         url: "/api/users",
         data: { user }
-            // user: {
-            //     username: user.username,
-            //     password: user.password
-            // }
-        // }
     })
 }
 
@@ -16,10 +11,6 @@ export const login = (user) => {
         method: "POST",
         url: "/api/session",
         data: { user }
-        // user: {
-        //     username: user.username,
-        //     password: user.password           
-        // } 
     });
 }
 
