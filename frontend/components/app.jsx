@@ -7,18 +7,19 @@ import LoginForm from './session/login/login_form_container'
 import ProductShow from './productShow/product_show_container'
 import SearchResults from './search_results/search_results_container'
 import NavBar from './nav_bar/nav_bar_container'
+import Cart from './cart/cart'
 
 const App = () => (
     <div>
         {/* <NavBar/> */}
         <header>
-            {/* <h1>amazon!!</h1> */}
             <Switch>
                 <Route exact path="/" component={SplashPage} />
                 <AuthRoute path="/signup" component={SignupForm} />
                 <AuthRoute path="/login" component={LoginForm} />
                 <Route path="/products/:productId" component={ProductShow} />
                 <Route path="/search" component={SearchResults} />
+                <Route path="/cart" component={Cart} />
             </Switch>
         </header>
 
@@ -43,12 +44,12 @@ const App = () => (
                     </div>
                 </div>
                 <div className="footer-bottom-logos">
-                    <a href="https://github.com/Muz-98">
-                        <img className="footer-github" src={window.logoGithubW} alt="Github"/>
+                    <a target="_blank" href="https://github.com/Muz-98">
+                        <img className="footer-github" target="_blank" src={window.logoGithubW} alt="Github"/>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/muzammil-c"> 
-                        <img className="footer-linkedin" src={window.logoLinkedinW} alt="Linkedin"/>
+                    <a target="_blank" href="https://www.linkedin.com/in/muzammil-c"> 
+                        <img className="footer-linkedin" target= "_blank" src={window.logoLinkedinW} alt="Linkedin"/>
                     </a>
                 </div>
             </div>
