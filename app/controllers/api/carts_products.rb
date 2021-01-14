@@ -3,7 +3,7 @@ class Api::CartsProductsController < ApplicationController
     def create 
     end
 
-    def updated
+    def update
     end
 
     def destroy 
