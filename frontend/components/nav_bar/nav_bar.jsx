@@ -143,6 +143,7 @@ class NavBar extends React.Component {
                             <div className="deliver-address">
                                 <div className="deliver-address-top">
                                     Deliver to {displayName}
+                                    {/* Deliver to {signinName} */}
                                 </div>
 
                                 <div className="deliver-address-bottom">
