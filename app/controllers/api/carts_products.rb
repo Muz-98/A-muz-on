@@ -1,19 +1,21 @@
 class Api::CartsProductsController < ApplicationController
 
     def create 
-        @cart_products = CartsProducts.new(cart_products_params)
+        @carts_products = CartsProducts.new(carts_products_params)
     end
 
     def update
     end
 
     def destroy 
-        
+        @carts_products = CartsProducts.find(params[:id])
+        @carts_products.destroy 
+        render :show
     end
 
     private 
 
-    def cart_products_params
+    def carts_products_params
         params.require(:cartsProducts).permit(:product_id)
     end
 end
