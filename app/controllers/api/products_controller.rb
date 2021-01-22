@@ -14,7 +14,6 @@ class Api::ProductsController < ApplicationController
         render :search_results
     end
 
-
 end
 
 
