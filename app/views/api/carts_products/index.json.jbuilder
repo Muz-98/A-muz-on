@@ -6,5 +6,5 @@ json.array! @carts_products do |product|
         json.array! product.photos do |photo|
             json.imageUrl url_for(photo)
         end 
-        end
+    end
 end 

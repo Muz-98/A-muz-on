@@ -8,10 +8,7 @@ Rails.application.routes.draw do
     get "/products/search", to: "products#search"
     resources :products, only: [:show, :index]
 
-    resource :cart, only: [:show]
-    resource :cartsproducts, only: [:create, :update, :destroy]
+    resources :cartsproducts, only: [:index, :create, :update, :destroy]
   end
-  
-  # resources :products, only: [:show]
-  # resources
+
 end
