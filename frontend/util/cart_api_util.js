@@ -5,15 +5,19 @@ export const fetchCart = () => {
     })
 }
 
-export const updateCart = () => {
-
+export const updateCart = (cartsProduct) => {
+    return $.ajax({
+        method: 'PATCH',
+        url: `/api/cartsproducts/${cartsProduct.id}`,
+        data: { cartsProduct }
+    })
 }
 
 export const addToCart = (cartsProduct) => {
     return $.ajax({
         method: 'POST',
         url: '/api/cartsproducts',
-        data: {cartsProduct}
+        data: { cartsProduct }
     })
 }
 
