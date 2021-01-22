@@ -24,3 +24,21 @@ export const fetchCart = () => {
         return CartAPIUtil.fetchCart().then((cart) => dispatch(receiveCart(cart)))
     }
 }
+
+export const addToCart = (cartProduct) => {
+    return dispatch => {
+        return CartAPIUtil.addToCart(cartProduct).then(() => dispatch(receiveCart()))
+    }
+}
+
+export const updateCart = (cartProduct) => {
+    return dispatch => {
+        return CartAPIUtil.updateCart(cartProduct).then((cart) => dispatch(receiveCart(cart)))
+    }
+}
+
+export const deleteFromCart = (cartProductId) => {
+    return dispatch => {
+        return CartAPIUtil.deleteFromCart(cartProductId).then((cart) => dispatch(receiveCart(cart)))
+    }
+}
