@@ -16,8 +16,15 @@ class ProductShow extends React.Component {
     addToCart(e) {
         e.preventDefault()
 
-        if (this.props.isLoggedIn) {
+        let cartsProducts = {
+            quantity: 1,
+            product_id: this.props.product.id
+        }
 
+        if (this.props.isLoggedIn) {
+            this.props.addToCart(cartsProducts).then(() => {
+                this.props.history.push('/cart')
+            });
         } else {
             this.props.history.push('/login')
         }
@@ -97,7 +104,7 @@ class ProductShow extends React.Component {
                                     </div>
                                     <div className="show-page-right-buttons">
                                         <div className="show-page-right-add-cart-btn">
-                                            <button className='add-to-cart-btn'>Add to Cart</button>
+                                            <button className='add-to-cart-btn' onClick={() => this.addToCart()}>Add to Cart</button>
                                         </div>
                                         <div className="show-page-right-buynow-btn">
                                             <button className="buy-now-btn">Buy Now</button>
