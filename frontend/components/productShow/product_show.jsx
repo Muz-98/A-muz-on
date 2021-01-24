@@ -3,13 +3,24 @@ import { withRouter } from 'react-router-dom'
 import NavBar from '../nav_bar/nav_bar_container'
 
 class ProductShow extends React.Component {
-    // constructor(props) {
-    //     super(props)
-    //     // this.state = this.props.product
-    // }
+    constructor(props) {
+        super(props)
+        // this.state = this.props.product
+        this.addToCart = this.addToCart.bind(this)
+    }
 
     componentDidMount() {
         this.props.fetchProduct(this.props.match.params.productId)
+    }
+
+    addToCart(e) {
+        e.preventDefault()
+
+        if (this.props.isLoggedIn) {
+
+        } else {
+            this.props.history.push('/login')
+        }
     }
 
     render() {
