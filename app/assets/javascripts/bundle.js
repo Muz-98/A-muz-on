@@ -969,8 +969,6 @@ var mDTP = function mDTP(dispatch) {
 
 /***/ }),
 
-<<<<<<< HEAD
-=======
 /***/ "./frontend/components/productShow/product_show.jsx":
 /*!**********************************************************!*\
   !*** ./frontend/components/productShow/product_show.jsx ***!
@@ -1139,17 +1137,10 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
 
 /***/ }),
 
->>>>>>> master
 /***/ "./frontend/components/productShow/product_show_container.js":
 /*!*******************************************************************!*\
   !*** ./frontend/components/productShow/product_show_container.js ***!
   \*******************************************************************/
-<<<<<<< HEAD
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/Muzammil/Desktop/amazon/frontend/components/productShow/product_show_container.js: Unexpected token (12:16)\n\n\u001b[0m \u001b[90m 10 | \u001b[39m        product\u001b[33m:\u001b[39m state\u001b[33m.\u001b[39mentities\u001b[33m.\u001b[39mproducts[ownProps\u001b[33m.\u001b[39mmatch\u001b[33m.\u001b[39mparams\u001b[33m.\u001b[39mproductId]\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 11 | \u001b[39m        isLoggedIn\u001b[33m:\u001b[39m \u001b[33mBoolean\u001b[39m(state\u001b[33m.\u001b[39msession\u001b[33m.\u001b[39mcurrentUser\u001b[33m.\u001b[39mid)\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 12 | \u001b[39m        product \u001b[33m=\u001b[39m state\u001b[33m.\u001b[39mentities\u001b[33m.\u001b[39mproducts[ownProps\u001b[33m.\u001b[39mmatch\u001b[33m.\u001b[39mparams\u001b[33m.\u001b[39mproductId]\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 13 | \u001b[39m    }\u001b[0m\n\u001b[0m \u001b[90m 14 | \u001b[39m}\u001b[0m\n\u001b[0m \u001b[90m 15 | \u001b[39m\u001b[0m\n    at Object._raise (/Users/Muzammil/Desktop/amazon/node_modules/@babel/parser/lib/index.js:748:17)\n    at Object.raiseWithData (/Users/Muzammil/Desktop/amazon/node_modules/@babel/parser/lib/index.js:741:17)\n    at Object.raise (/Users/Muzammil/Desktop/amazon/node_modules/@babel/parser/lib/index.js:735:17)\n    at Object.unexpected (/Users/Muzammil/Desktop/amazon/node_modules/@babel/parser/lib/index.js:9101:16)\n    at Object.checkExpressionErrors (/Users/Muzammil/Desktop/amazon/node_modules/@babel/parser/lib/index.js:9189:12)\n    at Object.parseMaybeAssign (/Users/Muzammil/Desktop/amazon/node_modules/@babel/parser/lib/index.js:9953:12)\n    at Object.parseExpressionBase (/Users/Muzammil/Desktop/amazon/node_modules/@babel/parser/lib/index.js:9871:23)\n    at allowInAnd (/Users/Muzammil/Desktop/amazon/node_modules/@babel/parser/lib/index.js:9865:39)\n    at Object.allowInAnd (/Users/Muzammil/Desktop/amazon/node_modules/@babel/parser/lib/index.js:11547:12)\n    at Object.parseExpression (/Users/Muzammil/Desktop/amazon/node_modules/@babel/parser/lib/index.js:9865:17)");
-=======
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1189,7 +1180,6 @@ var mDTP = function mDTP(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_product_show__WEBPACK_IMPORTED_MODULE_3__["default"])));
->>>>>>> master
 
 /***/ }),
 
