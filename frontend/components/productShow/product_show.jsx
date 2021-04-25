@@ -6,14 +6,14 @@ class ProductShow extends React.Component {
     constructor(props) {
         super(props)
         // this.state = this.props.product
-        this.addToCart = this.addToCart.bind(this)
+        this.haddToCart = this.haddToCart.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchProduct(this.props.match.params.productId)
     }
 
-    addToCart(e) {
+    haddToCart(e) {
         e.preventDefault()
 
         let cartsProducts = {
@@ -29,6 +29,7 @@ class ProductShow extends React.Component {
             this.props.history.push('/login')
         }
     }
+    
 
     render() {
         if (this.props.product === undefined) return null
@@ -104,7 +105,7 @@ class ProductShow extends React.Component {
                                     </div>
                                     <div className="show-page-right-buttons">
                                         <div className="show-page-right-add-cart-btn">
-                                            <button className='add-to-cart-btn' onClick={() => this.addToCart()}>Add to Cart</button>
+                                            <button className='add-to-cart-btn' onClick={this.haddToCart}>Add to Cart</button>
                                         </div>
                                         <div className="show-page-right-buynow-btn">
                                             <button className="buy-now-btn">Buy Now</button>
