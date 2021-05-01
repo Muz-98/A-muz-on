@@ -15,24 +15,32 @@ class ProductShow extends React.Component {
 
     haddToCart(e) {
         e.preventDefault()
-
+        // debugger 
+        // this.props.history.push('/cart')
         let cartsProducts = {
             quantity: 1,
             product_id: this.props.product.id
         }
-
+        
         if (this.props.isLoggedIn) {
-            this.props.addToCart(cartsProducts).then(() => {
+            // debugger
+            // this.props.addToCart(cartsProducts).then(() => {
+                //     debugger
+                //     this.props.history.push('/cart')
+                //     debugger 
+                // });
                 this.props.history.push('/cart')
-            });
         } else {
+            debugger
             this.props.history.push('/login')
         }
     }
     
 
     render() {
+        
         if (this.props.product === undefined) return null
+        debugger
         return (
             <div>
                 <NavBar />
