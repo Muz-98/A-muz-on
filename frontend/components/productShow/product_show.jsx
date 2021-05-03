@@ -18,20 +18,20 @@ class ProductShow extends React.Component {
         // debugger 
         // this.props.history.push('/cart')
         let cartsProducts = {
-            quantity: 1,
-            product_id: this.props.product.id
+            product_id: this.props.product.id,
+            quantity: 1
         }
-        
+  
         if (this.props.isLoggedIn) {
             // debugger
-            // this.props.addToCart(cartsProducts).then(() => {
-                //     debugger
-                //     this.props.history.push('/cart')
-                //     debugger 
-                // });
-                this.props.history.push('/cart')
+            this.props.addToCart(cartsProducts).then(() => {
+                    
+                    this.props.history.push('/cart')
+                     
+                });
+
         } else {
-            debugger
+  
             this.props.history.push('/login')
         }
     }
@@ -40,7 +40,7 @@ class ProductShow extends React.Component {
     render() {
         
         if (this.props.product === undefined) return null
-        debugger
+
         return (
             <div>
                 <NavBar />

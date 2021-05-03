@@ -1,4 +1,4 @@
-class Api::CartsProductsController < ApplicationController
+class Api::CartsproductsController < ApplicationController
     before_action :ensure_logged_in, only: [:index, :create, :update, :destroy]
 
     def index 
@@ -9,7 +9,7 @@ class Api::CartsProductsController < ApplicationController
     def create 
         @carts_product = CartsProducts.new(carts_products_params)
         @carts_product.cart_id = current_user.cart.id
-
+        debugger 
         if @carts_product.save 
             render :show 
         else 
@@ -36,6 +36,7 @@ class Api::CartsProductsController < ApplicationController
     private 
 
     def carts_products_params
+         
         params.require(:cartsProducts).permit(:product_id, :quantity)
     end
 end

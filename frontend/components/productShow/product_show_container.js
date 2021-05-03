@@ -6,9 +6,10 @@ import { withRouter } from 'react-router-dom'
 import { fetchProducts } from '../../util/product_api_util'
 
 const mSTP = (state, ownProps) => {
+   
     return {
         product: state.entities.products[ownProps.match.params.productId],
-        isLoggedIn: Boolean(state.session.currentUser),
+        isLoggedIn: Boolean(state.session),
         product: state.entities.products[ownProps.match.params.productId]
     }
 }
