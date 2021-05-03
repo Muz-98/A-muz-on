@@ -31,7 +31,7 @@ class Api::CartsproductsController < ApplicationController
         @carts_product = CartsProducts.find(params[:id])
         @carts_product.destroy 
         render :show
-    end
+    end 
 
     private 
 
