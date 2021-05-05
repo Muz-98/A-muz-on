@@ -330,7 +330,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _session_signup_signup_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./session/signup/signup_form_container */ "./frontend/components/session/signup/signup_form_container.js");
 /* harmony import */ var _session_login_login_form_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./session/login/login_form_container */ "./frontend/components/session/login/login_form_container.js");
 /* harmony import */ var _productShow_product_show_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./productShow/product_show_container */ "./frontend/components/productShow/product_show_container.js");
-/* harmony import */ var _productShow_product_show_container__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_productShow_product_show_container__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _search_results_search_results_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./search_results/search_results_container */ "./frontend/components/search_results/search_results_container.js");
 /* harmony import */ var _nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./nav_bar/nav_bar_container */ "./frontend/components/nav_bar/nav_bar_container.js");
 /* harmony import */ var _footer_footer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./footer/footer */ "./frontend/components/footer/footer.jsx");
@@ -364,7 +363,7 @@ var App = function App() {
     component: _session_login_login_form_container__WEBPACK_IMPORTED_MODULE_5__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/products/:productId",
-    component: _productShow_product_show_container__WEBPACK_IMPORTED_MODULE_6___default.a
+    component: _productShow_product_show_container__WEBPACK_IMPORTED_MODULE_6__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/search",
     component: _search_results_search_results_container__WEBPACK_IMPORTED_MODULE_7__["default"]
@@ -1034,13 +1033,16 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     value: function haddToCart(e) {
       var _this2 = this;
 
-      e.preventDefault();
+      e.preventDefault(); // debugger 
+      // this.props.history.push('/cart')
+
       var cartsProducts = {
-        quantity: 1,
-        product_id: this.props.product.id
+        product_id: this.props.product.id,
+        quantity: 1
       };
 
       if (this.props.isLoggedIn) {
+        // debugger
         this.props.addToCart(cartsProducts).then(function () {
           _this2.props.history.push('/cart');
         });
@@ -1164,7 +1166,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var mSTP = function mSTP(state, ownProps) {
   return _defineProperty({
     product: state.entities.products[ownProps.match.params.productId],
-    isLoggedIn: Boolean(state.session.currentUser)
+    isLoggedIn: Boolean(state.session)
   }, "product", state.entities.products[ownProps.match.params.productId]);
 };
 
