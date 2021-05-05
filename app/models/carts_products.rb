@@ -10,6 +10,9 @@
 #
 class CartsProducts < ApplicationRecord
 
+    validates :cart_id, :product_id, :quantity, presence: true
+
+
     belongs_to :cart,
     class_name: :Cart,
     foreign_key: :cart_id 

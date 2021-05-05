@@ -58,6 +58,6 @@ attr_reader :password
 
     has_many :cart_products,
     through: :cart,
-    through: :cart_products
+    source: :cart_products
 
 end

@@ -6,10 +6,15 @@ class Api::CartsproductsController < ApplicationController
         render :index  
     end
 
+    def show 
+        @carts_product = CartsProducts.find(params[:id])
+    end
+
     def create 
+        # debugger
         @carts_product = CartsProducts.new(carts_products_params)
         @carts_product.cart_id = current_user.cart.id
-        debugger 
+        # debugger 
         if @carts_product.save 
             render :show 
         else 
