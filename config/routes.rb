@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     get "/products/search", to: "products#search"
     resources :products, only: [:show, :index]
 
-    resources :cartsproducts, only: [:index, :create, :update, :destroy]
+    resources :purchases, only: [:index, :create, :show, :destroy, :update] do
+        delete "clear", on: :collection
+      end
   end
 
 end
