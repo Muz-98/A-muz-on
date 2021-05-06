@@ -1,18 +1,17 @@
 # == Schema Information
 #
-# Table name: carts_products
+# Table name: purchases
 #
 #  id         :bigint           not null, primary key
 #  cart_id    :integer          not null
 #  product_id :integer          not null
+#  quantity   :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  quantity   :integer
 #
-class CartsProducts < ApplicationRecord
+class Purchase < ApplicationRecord
 
     validates :cart_id, :product_id, :quantity, presence: true
-
 
     belongs_to :cart,
     class_name: :Cart,
