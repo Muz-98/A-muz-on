@@ -90,18 +90,16 @@
 /*!******************************************!*\
   !*** ./frontend/actions/cart_actions.js ***!
   \******************************************/
-/*! exports provided: RECEIVE_CART, RECEIVE_PURCHASE, DELETE_PURCHASE, RECEIVE_PURCHASE_ERRORS, DELETE_PURCHASES, fetchCart, fetchPurchase, createPurchase, updatePurchase, destroyPurchase, destroyPurchases */
+/*! exports provided: RECEIVE_CART, DELETE_PURCHASE, RECEIVE_PURCHASE_ERRORS, DELETE_PURCHASES, fetchCart, createPurchase, updatePurchase, destroyPurchase, destroyPurchases */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_CART", function() { return RECEIVE_CART; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_PURCHASE", function() { return RECEIVE_PURCHASE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_PURCHASE", function() { return DELETE_PURCHASE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_PURCHASE_ERRORS", function() { return RECEIVE_PURCHASE_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_PURCHASES", function() { return DELETE_PURCHASES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCart", function() { return fetchCart; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPurchase", function() { return fetchPurchase; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPurchase", function() { return createPurchase; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updatePurchase", function() { return updatePurchase; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyPurchase", function() { return destroyPurchase; });
@@ -109,7 +107,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_purchase_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/purchase_api_util */ "./frontend/util/purchase_api_util.js");
 
 var RECEIVE_CART = "RECEIVE_CART";
-var RECEIVE_PURCHASE = "RECEIVE_PURCHASE";
 var DELETE_PURCHASE = "DELETE_PURCHASE";
 var RECEIVE_PURCHASE_ERRORS = "RECEIVE_PURCHASE_ERRORS";
 var DELETE_PURCHASES = "DELETE_PURCHASES";
@@ -118,13 +115,6 @@ var receiveCart = function receiveCart(purchases) {
   return {
     type: RECEIVE_CART,
     purchases: purchases
-  };
-};
-
-var receivePurchase = function receivePurchase(purchase) {
-  return {
-    type: RECEIVE_PURCHASE,
-    purchase: purchase
   };
 };
 
@@ -153,13 +143,6 @@ var fetchCart = function fetchCart() {
   return function (dispatch) {
     return _util_purchase_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchCart"]().then(function (purchases) {
       return dispatch(receiveCart(purchases));
-    });
-  };
-};
-var fetchPurchase = function fetchPurchase(purchaseId) {
-  return function (dispatch) {
-    return _util_purchase_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchPurchase"](purchaseId).then(function (purchase) {
-      return dispatch(receivePurchase(purchase));
     });
   };
 };
@@ -2128,29 +2111,29 @@ var thunk = function thunk(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/cart_actions */ "./frontend/actions/cart_actions.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module '../actions/cart_item_actions'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 
 var cartReducer = function cartReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var oldState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  Object.freeze(state);
-  var newState = Object.assign({}, state);
+  Object.freeze(oldState);
+  var newState = Object.assign({}, oldState);
 
   switch (action.type) {
-    case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_CARTPRODUCTS"]:
-      return action.cart;
+    case !(function webpackMissingModule() { var e = new Error("Cannot find module '../actions/cart_item_actions'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()):
+      return action.purchases;
 
-    case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CARTPRODUCT"]:
-      newState[action.cartProduct.id] = action.cartProduct;
+    case !(function webpackMissingModule() { var e = new Error("Cannot find module '../actions/cart_item_actions'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()):
+      delete newState[action.purchaseId];
       return newState;
 
-    case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_CARTPRODUCT"]:
-      delete newState[action.cartProductId];
+    case !(function webpackMissingModule() { var e = new Error("Cannot find module '../actions/cart_item_actions'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()):
+      delete newState[action.purchases];
       return newState;
 
     default:
-      return state;
+      return oldState;
   }
 };
 

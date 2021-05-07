@@ -2,7 +2,6 @@ import * as CartAPIUtil from '../util/purchase_api_util'
 
 
 export const RECEIVE_CART = "RECEIVE_CART";
-export const RECEIVE_PURCHASE = "RECEIVE_PURCHASE";
 export const DELETE_PURCHASE = "DELETE_PURCHASE";
 export const RECEIVE_PURCHASE_ERRORS = "RECEIVE_PURCHASE_ERRORS";
 export const DELETE_PURCHASES = "DELETE_PURCHASES";
@@ -10,11 +9,6 @@ export const DELETE_PURCHASES = "DELETE_PURCHASES";
 const receiveCart = (purchases) => ({
     type: RECEIVE_CART,
     purchases
-});
-
-const receivePurchase = (purchase) => ({
-    type: RECEIVE_PURCHASE,
-    purchase
 });
 
 const deletePurchase = (purchaseId) => ({
@@ -32,17 +26,9 @@ const receivePurchaseErrors = errors => ({
     errors
 });
 
-
-
 export const fetchCart = () => dispatch => {
     return CartAPIUtil.fetchCart().then(purchases => (
         dispatch(receiveCart(purchases))
-    ))
-};
-
-export const fetchPurchase = (purchaseId) => dispatch => {
-    return CartAPIUtil.fetchPurchase(purchaseId).then(purchase => (
-        dispatch(receivePurchase(purchase))
     ))
 };
 
