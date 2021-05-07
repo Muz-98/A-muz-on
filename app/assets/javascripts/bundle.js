@@ -90,70 +90,104 @@
 /*!******************************************!*\
   !*** ./frontend/actions/cart_actions.js ***!
   \******************************************/
-/*! exports provided: RECEIVE_ALL_CARTPRODUCTS, RECEIVE_CARTPRODUCT, REMOVE_CARTPRODUCT, fetchCart, addToCart, updateCart, deleteFromCart */
+/*! exports provided: RECEIVE_CART, RECEIVE_PURCHASE, DELETE_PURCHASE, RECEIVE_PURCHASE_ERRORS, DELETE_PURCHASES, fetchCart, fetchPurchase, createPurchase, updatePurchase, destroyPurchase, destroyPurchases */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_CARTPRODUCTS", function() { return RECEIVE_ALL_CARTPRODUCTS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_CARTPRODUCT", function() { return RECEIVE_CARTPRODUCT; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_CARTPRODUCT", function() { return REMOVE_CARTPRODUCT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_CART", function() { return RECEIVE_CART; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_PURCHASE", function() { return RECEIVE_PURCHASE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_PURCHASE", function() { return DELETE_PURCHASE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_PURCHASE_ERRORS", function() { return RECEIVE_PURCHASE_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DELETE_PURCHASES", function() { return DELETE_PURCHASES; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCart", function() { return fetchCart; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addToCart", function() { return addToCart; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateCart", function() { return updateCart; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteFromCart", function() { return deleteFromCart; });
-/* harmony import */ var _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/cart_api_util */ "./frontend/util/cart_api_util.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPurchase", function() { return fetchPurchase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPurchase", function() { return createPurchase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updatePurchase", function() { return updatePurchase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyPurchase", function() { return destroyPurchase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyPurchases", function() { return destroyPurchases; });
+/* harmony import */ var _util_purchase_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/purchase_api_util */ "./frontend/util/purchase_api_util.js");
 
-var RECEIVE_ALL_CARTPRODUCTS = "RECEIVE_ALL_CARTPRODUCTS";
-var RECEIVE_CARTPRODUCT = "RECEIVE_CARTPRODUCT";
-var REMOVE_CARTPRODUCT = "REMOVE_CARTPRODUCT";
+var RECEIVE_CART = "RECEIVE_CART";
+var RECEIVE_PURCHASE = "RECEIVE_PURCHASE";
+var DELETE_PURCHASE = "DELETE_PURCHASE";
+var RECEIVE_PURCHASE_ERRORS = "RECEIVE_PURCHASE_ERRORS";
+var DELETE_PURCHASES = "DELETE_PURCHASES";
 
-var receiveCart = function receiveCart(cart) {
+var receiveCart = function receiveCart(purchases) {
   return {
-    type: RECEIVE_ALL_CARTPRODUCTS,
-    cart: cart
+    type: RECEIVE_CART,
+    purchases: purchases
   };
 };
 
-var receiveCartProduct = function receiveCartProduct(cartProduct) {
+var receivePurchase = function receivePurchase(purchase) {
   return {
-    type: RECEIVE_CARTPRODUCT,
-    cartProduct: cartProduct
+    type: RECEIVE_PURCHASE,
+    purchase: purchase
   };
 };
 
-var removeCartProduct = function removeCartProduct(cartProduct) {
+var deletePurchase = function deletePurchase(purchaseId) {
   return {
-    type: REMOVE_CARTPRODUCT,
-    cartProduct: cartProduct.id
+    type: DELETE_PURCHASE,
+    purchaseId: purchaseId
+  };
+};
+
+var deletePurchases = function deletePurchases(purchases) {
+  return {
+    type: DELETE_PURCHASES,
+    purchases: purchases
+  };
+};
+
+var receivePurchaseErrors = function receivePurchaseErrors(errors) {
+  return {
+    type: RECEIVE_PURCHASE_ERRORS,
+    errors: errors
   };
 };
 
 var fetchCart = function fetchCart() {
   return function (dispatch) {
-    return _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchCart"]().then(function (cart) {
-      return dispatch(receiveCart(cart));
+    return _util_purchase_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchCart"]().then(function (purchases) {
+      return dispatch(receiveCart(purchases));
     });
   };
 };
-var addToCart = function addToCart(cartProduct) {
+var fetchPurchase = function fetchPurchase(purchaseId) {
   return function (dispatch) {
-    return _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__["addToCart"](cartProduct).then(function (cartProduct) {
-      return dispatch(receiveCartProduct(cartProduct));
+    return _util_purchase_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchPurchase"](purchaseId).then(function (purchase) {
+      return dispatch(receivePurchase(purchase));
     });
   };
 };
-var updateCart = function updateCart(cartProduct) {
+var createPurchase = function createPurchase(purchase) {
   return function (dispatch) {
-    return _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__["updateCart"](cartProduct).then(function (cartProduct) {
-      return dispatch(receiveCartProduct(cartProduct));
+    return _util_purchase_api_util__WEBPACK_IMPORTED_MODULE_0__["createPurchase"](purchase).then(function (purchase) {
+      return dispatch(receivePurchase(purchase));
     });
   };
 };
-var deleteFromCart = function deleteFromCart(cartProductId) {
+var updatePurchase = function updatePurchase(purchase) {
   return function (dispatch) {
-    return _util_cart_api_util__WEBPACK_IMPORTED_MODULE_0__["deleteFromCart"](cartProductId).then(function (cartProductId) {
-      return dispatch(removeCartProduct(cartProductId));
+    return _util_purchase_api_util__WEBPACK_IMPORTED_MODULE_0__["updatePurchase"](purchase).then(function (purchase) {
+      return dispatch(receivePurchase(purchase));
+    });
+  };
+};
+var destroyPurchase = function destroyPurchase(purchaseId) {
+  return function (dispatch) {
+    return _util_purchase_api_util__WEBPACK_IMPORTED_MODULE_0__["destroyPurchase"](purchaseId).then(function (purchaseId) {
+      return dispatch(deletePurchase(purchaseId));
+    });
+  };
+};
+var destroyPurchases = function destroyPurchases() {
+  return function (dispatch) {
+    return _util_purchase_api_util__WEBPACK_IMPORTED_MODULE_0__["destroyPurchases"]().then(function (purchases) {
+      return dispatch(deletePurchases(purchases));
     });
   };
 };
@@ -2404,52 +2438,6 @@ var configureStore = function configureStore() {
 
 /***/ }),
 
-/***/ "./frontend/util/cart_api_util.js":
-/*!****************************************!*\
-  !*** ./frontend/util/cart_api_util.js ***!
-  \****************************************/
-/*! exports provided: fetchCart, updateCart, addToCart, deleteFromCart */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCart", function() { return fetchCart; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateCart", function() { return updateCart; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addToCart", function() { return addToCart; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteFromCart", function() { return deleteFromCart; });
-var fetchCart = function fetchCart() {
-  return $.ajax({
-    method: "GET",
-    url: "/api/cartsproducts"
-  });
-};
-var updateCart = function updateCart(cartsProduct) {
-  return $.ajax({
-    method: 'PATCH',
-    url: "/api/cartsproducts/".concat(cartsProduct.id),
-    data: {
-      cartsProduct: cartsProduct
-    }
-  });
-};
-var addToCart = function addToCart(cartsProduct) {
-  return $.ajax({
-    method: 'POST',
-    url: '/api/cartsproducts',
-    data: {
-      cartsProduct: cartsProduct
-    }
-  });
-};
-var deleteFromCart = function deleteFromCart(cartsProductId) {
-  return $.ajax({
-    method: 'DELETE',
-    url: "/api/cartsproducts/".concat(cartsProductId)
-  });
-};
-
-/***/ }),
-
 /***/ "./frontend/util/product_api_util.js":
 /*!*******************************************!*\
   !*** ./frontend/util/product_api_util.js ***!
@@ -2471,6 +2459,59 @@ var fetchProduct = function fetchProduct(productId) {
   return $.ajax({
     method: "GET",
     url: "/api/products/".concat(productId)
+  });
+};
+
+/***/ }),
+
+/***/ "./frontend/util/purchase_api_util.js":
+/*!********************************************!*\
+  !*** ./frontend/util/purchase_api_util.js ***!
+  \********************************************/
+/*! exports provided: fetchCart, createPurchase, updatePurchase, destroyPurchase, destroyPurchases */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchCart", function() { return fetchCart; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPurchase", function() { return createPurchase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updatePurchase", function() { return updatePurchase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyPurchase", function() { return destroyPurchase; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "destroyPurchases", function() { return destroyPurchases; });
+var fetchCart = function fetchCart() {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/purchases'
+  });
+};
+var createPurchase = function createPurchase(purchase) {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/purchases',
+    data: {
+      purchase: purchase
+    }
+  });
+};
+var updatePurchase = function updatePurchase(purchase) {
+  return $.ajax({
+    method: 'PATCH',
+    url: "/api/purchases/".concat(purchase.id),
+    data: {
+      purchase: purchase
+    }
+  });
+};
+var destroyPurchase = function destroyPurchase(purchaseId) {
+  return $.ajax({
+    method: 'DELETE',
+    url: "/api/purchases/".concat(purchaseId)
+  });
+};
+var destroyPurchases = function destroyPurchases() {
+  return $.ajax({
+    method: 'DELETE',
+    url: '/api/purchases/clear'
   });
 };
 
