@@ -2,7 +2,7 @@ import {
     RECEIVE_CART,
     DELETE_PURCHASE,
     DELETE_PURCHASES
-} from '../actions/cart_item_actions'
+} from '../actions/cart_actions'
 
 const cartReducer = (oldState = {}, action) => {
     Object.freeze(oldState);

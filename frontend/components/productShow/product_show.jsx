@@ -6,6 +6,10 @@ class ProductShow extends React.Component {
     constructor(props) {
         super(props)
         // this.state = this.props.product
+
+        this.state = {
+            quantity: 1
+        }
         this.haddToCart = this.haddToCart.bind(this)
     }
 
@@ -14,26 +18,36 @@ class ProductShow extends React.Component {
     }
 
     haddToCart(e) {
-        e.preventDefault()
-        // debugger 
-        // this.props.history.push('/cart')
-        let cartsProducts = {
-            product_id: this.props.product.id,
-            quantity: 1
-        }
+        // e.preventDefault()
+        // // debugger 
+        // // this.props.history.push('/cart')
+        // let cartsProducts = {
+        //     product_id: this.props.product.id,
+        //     quantity: 1
+        // }
   
-        if (this.props.isLoggedIn) {
-            // debugger
-            this.props.addToCart(cartsProducts).then(() => {
+        // if (this.props.isLoggedIn) {
+        //     // debugger
+        //     this.props.addToCart(cartsProducts).then(() => {
                     
-                    this.props.history.push('/cart')
+        //             this.props.history.push('/cart')
                      
-                });
+        //         });
 
-        } else {
+        // } else {
   
-            this.props.history.push('/login')
+        //     this.props.history.push('/login')
+        // }
+         
+        e.preventDefault();
+         
+        const purchase = {
+            
+            product_id: this.props.product.id,
+            quantity: this.state.quantity
         }
+        this.props.createPurchase(purchase).then(() =>
+            this.props.history.push('/cart'))
     }
     
 

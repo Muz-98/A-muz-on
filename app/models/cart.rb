@@ -11,14 +11,16 @@ class Cart < ApplicationRecord
     validates :user_id, uniqueness: true
     
     belongs_to :user,
-    class_name: :User, 
+    class_name: :User,
+    primary_key: :id,
     foreign_key: :user_id
 
-    has_many :cart_products,
-    class_name: :CartsProducts, 
-    foreign_key: :cart_id 
+    has_many :purchases,
+    class_name: :Purchase,
+    primary_key: :id,
+    foreign_key: :cart_id
 
     has_many :products,
-    through: :cart_products,
+    through: :purchases,
     source: :product 
 end

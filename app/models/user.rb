@@ -54,10 +54,11 @@ attr_reader :password
     
     has_one :cart,
     class_name: :Cart,
+    primary_key: :id,
     foreign_key: :user_id
 
     has_many :cart_products,
     through: :cart,
-    source: :cart_products
+    source: :purchases
 
 end

@@ -149,14 +149,14 @@ var fetchCart = function fetchCart() {
 var createPurchase = function createPurchase(purchase) {
   return function (dispatch) {
     return _util_purchase_api_util__WEBPACK_IMPORTED_MODULE_0__["createPurchase"](purchase).then(function (purchase) {
-      return dispatch(receivePurchase(purchase));
+      return dispatch(receiveCart(purchase));
     });
   };
 };
 var updatePurchase = function updatePurchase(purchase) {
   return function (dispatch) {
     return _util_purchase_api_util__WEBPACK_IMPORTED_MODULE_0__["updatePurchase"](purchase).then(function (purchase) {
-      return dispatch(receivePurchase(purchase));
+      return dispatch(receiveCart(purchase));
     });
   };
 };
@@ -350,7 +350,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _search_results_search_results_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./search_results/search_results_container */ "./frontend/components/search_results/search_results_container.js");
 /* harmony import */ var _nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./nav_bar/nav_bar_container */ "./frontend/components/nav_bar/nav_bar_container.js");
 /* harmony import */ var _footer_footer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./footer/footer */ "./frontend/components/footer/footer.jsx");
-/* harmony import */ var _cart_cart__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./cart/cart */ "./frontend/components/cart/cart.jsx");
+/* harmony import */ var _cart_cart_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./cart/cart_container */ "./frontend/components/cart/cart_container.jsx");
 
 
 
@@ -386,7 +386,7 @@ var App = function App() {
     component: _search_results_search_results_container__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/cart",
-    component: _cart_cart__WEBPACK_IMPORTED_MODULE_10__["default"]
+    component: _cart_cart_container__WEBPACK_IMPORTED_MODULE_10__["default"]
   })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/",
     component: _footer_footer__WEBPACK_IMPORTED_MODULE_9__["default"]
@@ -481,24 +481,28 @@ var Cart = /*#__PURE__*/function (_React$Component) {
 
   var _super = _createSuper(Cart);
 
-  function Cart() {
+  function Cart(props) {
     _classCallCheck(this, Cart);
 
-    return _super.apply(this, arguments);
+    return _super.call(this, props);
   }
 
   _createClass(Cart, [{
     key: "componentDidMount",
-    value: function componentDidMount() {// let curCart = this.props.fetchCart()
+    value: function componentDidMount() {
+      debugger; // this.props.fetchCart()
+
+      console.log(this.props);
     }
   }, {
     key: "render",
     value: function render() {
       // if (curCart === undefined) return null 
-      console.log(this.props.cartProducts);
-      console.log(this.props); // console.log(curCart)
-
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Hiyaaaa from Cart"));
+      // console.log(this.props.cartProducts)
+      // console.log(curCart)
+      console.log(this.props.currentUser);
+      debugger;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.cartProducts.name));
     }
   }]);
 
@@ -506,6 +510,52 @@ var Cart = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Cart);
+
+/***/ }),
+
+/***/ "./frontend/components/cart/cart_container.jsx":
+/*!*****************************************************!*\
+  !*** ./frontend/components/cart/cart_container.jsx ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _cart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./cart */ "./frontend/components/cart/cart.jsx");
+/* harmony import */ var _actions_cart_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/cart_actions */ "./frontend/actions/cart_actions.js");
+
+
+
+
+
+var mSTP = function mSTP(state) {
+  return {
+    cartProducts: state.entities.cartProduct,
+    currentUser: state.session.currentUser
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    fetchCart: function fetchCart() {
+      return dispatch(Object(_actions_cart_actions__WEBPACK_IMPORTED_MODULE_3__["fetchCart"])());
+    },
+    updateCart: function updateCart(purchase) {
+      return dispatch(Object(_actions_cart_actions__WEBPACK_IMPORTED_MODULE_3__["updatePurchase"])(purchase));
+    },
+    deleteFromCart: function deleteFromCart(cartProductId) {
+      return dispatch(Object(_actions_cart_actions__WEBPACK_IMPORTED_MODULE_3__["destroyPurchase"])(cartProductId));
+    },
+    deleteAllFromCart: function deleteAllFromCart() {
+      return dispatch(Object(_actions_cart_actions__WEBPACK_IMPORTED_MODULE_3__["destroyPurchases"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_0__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(mSTP, mDTP)(_cart__WEBPACK_IMPORTED_MODULE_2__["default"])));
 
 /***/ }),
 
@@ -1036,6 +1086,9 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props); // this.state = this.props.product
 
+    _this.state = {
+      quantity: 1
+    };
     _this.haddToCart = _this.haddToCart.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -1050,22 +1103,29 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     value: function haddToCart(e) {
       var _this2 = this;
 
-      e.preventDefault(); // debugger 
-      // this.props.history.push('/cart')
-
-      var cartsProducts = {
+      // e.preventDefault()
+      // // debugger 
+      // // this.props.history.push('/cart')
+      // let cartsProducts = {
+      //     product_id: this.props.product.id,
+      //     quantity: 1
+      // }
+      // if (this.props.isLoggedIn) {
+      //     // debugger
+      //     this.props.addToCart(cartsProducts).then(() => {
+      //             this.props.history.push('/cart')
+      //         });
+      // } else {
+      //     this.props.history.push('/login')
+      // }
+      e.preventDefault();
+      var purchase = {
         product_id: this.props.product.id,
-        quantity: 1
+        quantity: this.state.quantity
       };
-
-      if (this.props.isLoggedIn) {
-        // debugger
-        this.props.addToCart(cartsProducts).then(function () {
-          _this2.props.history.push('/cart');
-        });
-      } else {
-        this.props.history.push('/login');
-      }
+      this.props.createPurchase(purchase).then(function () {
+        return _this2.props.history.push('/cart');
+      });
     }
   }, {
     key: "render",
@@ -1192,8 +1252,21 @@ var mDTP = function mDTP(dispatch) {
     fetchProduct: function fetchProduct(productId) {
       return dispatch(Object(_actions_product_actions__WEBPACK_IMPORTED_MODULE_1__["fetchProduct"])(productId));
     },
-    addToCart: function addToCart(cartProduct) {
-      return dispatch(Object(_actions_cart_actions__WEBPACK_IMPORTED_MODULE_2__["addToCart"])(cartProduct));
+    addToCart: function (_addToCart) {
+      function addToCart(_x) {
+        return _addToCart.apply(this, arguments);
+      }
+
+      addToCart.toString = function () {
+        return _addToCart.toString();
+      };
+
+      return addToCart;
+    }(function (cartProduct) {
+      return dispatch(addToCart(cartProduct));
+    }),
+    createPurchase: function createPurchase(purchase) {
+      return dispatch(Object(_actions_cart_actions__WEBPACK_IMPORTED_MODULE_2__["createPurchase"])(purchase));
     }
   };
 };
@@ -2111,7 +2184,7 @@ var thunk = function thunk(_ref) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-!(function webpackMissingModule() { var e = new Error("Cannot find module '../actions/cart_item_actions'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/cart_actions */ "./frontend/actions/cart_actions.js");
 
 
 var cartReducer = function cartReducer() {
@@ -2121,14 +2194,14 @@ var cartReducer = function cartReducer() {
   var newState = Object.assign({}, oldState);
 
   switch (action.type) {
-    case !(function webpackMissingModule() { var e = new Error("Cannot find module '../actions/cart_item_actions'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()):
+    case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CART"]:
       return action.purchases;
 
-    case !(function webpackMissingModule() { var e = new Error("Cannot find module '../actions/cart_item_actions'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()):
+    case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["DELETE_PURCHASE"]:
       delete newState[action.purchaseId];
       return newState;
 
-    case !(function webpackMissingModule() { var e = new Error("Cannot find module '../actions/cart_item_actions'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()):
+    case _actions_cart_actions__WEBPACK_IMPORTED_MODULE_0__["DELETE_PURCHASES"]:
       delete newState[action.purchases];
       return newState;
 

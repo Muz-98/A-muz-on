@@ -8,7 +8,7 @@ import ProductShow from './productShow/product_show_container'
 import SearchResults from './search_results/search_results_container'
 import NavBar from './nav_bar/nav_bar_container'
 import Footer from './footer/footer'
-import Cart from './cart/cart'
+import Cart from './cart/cart_container'
 
 const App = () => (
     <div className="outermost-div">

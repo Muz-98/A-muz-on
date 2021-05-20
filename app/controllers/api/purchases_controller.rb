@@ -12,14 +12,15 @@ class Api::PurchasesController < ApplicationController
     end
 
     def create
-    
-       @purchase = Purchase.new([purchase_params);
+         
+       @purchase = Purchase.new(purchase_params);
        @purchase.cart_id = current_user.cart.id
        @purchase.product_id = params[:purchase][:product_id]
         
 
-        if @purchase.save
-            @cart = Cart.find_by(id: purchase.cart_id)
+        if @purchase.save!
+            
+            @cart = Cart.find_by(id: @purchase.cart_id)
             render :show
         else
             render json: @purchase.errors.full_messages, status: 422

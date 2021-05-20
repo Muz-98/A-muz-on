@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { fetchProduct } from '../../actions/product_actions'
-import { addToCart } from '../../actions/cart_actions'
+import { createPurchase } from '../../actions/cart_actions'
 import ProductShow from './product_show'
 import { withRouter } from 'react-router-dom'
 import { fetchProducts } from '../../util/product_api_util'
@@ -17,7 +17,8 @@ const mSTP = (state, ownProps) => {
 const mDTP = dispatch => {
     return {
         fetchProduct: productId => dispatch(fetchProduct(productId)),
-        addToCart: cartProduct => dispatch(addToCart(cartProduct))
+        addToCart: cartProduct => dispatch(addToCart(cartProduct)),
+        createPurchase: (purchase) => dispatch(createPurchase(purchase))
     }
 }
 

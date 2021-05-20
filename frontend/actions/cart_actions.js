@@ -34,13 +34,13 @@ export const fetchCart = () => dispatch => {
 
 export const createPurchase = (purchase) => dispatch => {
     return CartAPIUtil.createPurchase(purchase).then(purchase => (
-        dispatch(receivePurchase(purchase))
+        dispatch(receiveCart(purchase))
     ))
 };
 
 export const updatePurchase = (purchase) => dispatch => {
     return CartAPIUtil.updatePurchase(purchase).then(purchase => (
-        dispatch(receivePurchase(purchase))
+        dispatch(receiveCart(purchase))
     ))
 };
 

@@ -1,22 +1,22 @@
-
-import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
 import Cart from './cart'
-import { fetchCart, addToCart, updateCart, deleteFromCart} from '../../actions/cart_actions'
+import { fetchCart, updatePurchase, destroyPurchase, destroyPurchases} from '../../actions/cart_actions'
 
 const mSTP = state => {
     return ({
         cartProducts: state.entities.cartProduct,
-        currentUser: state.session.id
+        currentUser: state.session.currentUser
     })
 }
 
 const mDTP = dispatch => {
-    return ({
+    return {
         fetchCart: () => dispatch(fetchCart()),
-        addToCart: cartProduct => dispatch(addToCart(cartProduct)),
-        updateCart: cartProduct => dispatch(updateCart(cartProduct)),
-        deleteFromCart: cartProductId => dispatch(deleteFromCart(cartProductId))
-    })
+        updateCart: purchase => dispatch(updatePurchase(purchase)),
+        deleteFromCart: cartProductId => dispatch(destroyPurchase(cartProductId)),
+        deleteAllFromCart: () => dispatch(destroyPurchases())
+    }
 }
 
-export default connect(mSTP, mDTP)(Cart)
+export default withRouter(connect(mSTP, mDTP)(Cart))
