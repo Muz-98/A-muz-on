@@ -485,24 +485,57 @@ var Cart = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Cart);
 
     return _super.call(this, props);
-  }
+  } // componentDidMount() {
+  //     debugger
+  //     this.props.fetchCart()
+  //     console.log(this.props)
+  // }
+
 
   _createClass(Cart, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      debugger; // this.props.fetchCart()
-
-      console.log(this.props);
-    }
-  }, {
     key: "render",
     value: function render() {
       // if (curCart === undefined) return null 
       // console.log(this.props.cartProducts)
       // console.log(curCart)
       console.log(this.props.currentUser);
-      debugger;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, this.props.cartProducts.name));
+
+      if (!this.props.cartProducts) {
+        return null;
+      }
+
+      var fullCart = [];
+      fullCart.push(this.props.cartProducts); // debugger 
+
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cart-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "cart-title"
+      }, "Shopping Cart"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "cart-items"
+      }, fullCart.map(function (cartItem) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "cart-item"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "cart-item-left"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: cartItem.photos[0].imageUrl,
+          alt: "product-photo"
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "cart-item-right"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "cart-item-title"
+        }, cartItem.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "cart-item-in-stock"
+        }, "In Stock"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "cart-item-prime-logo"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: window.primeLogo,
+          alt: "logo"
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "cart-item-freereturns"
+        }, "& FREE Returns")));
+      }))));
     }
   }]);
 
