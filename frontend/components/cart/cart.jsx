@@ -46,9 +46,9 @@ class Cart extends React.Component {
                                         <div className="cart-item-in-stock">In Stock</div>
                                         <div className="cart-item-prime-logo">
                                             <img src={window.primeLogo} alt="logo" />
-                                        </div>
-                                        <div className="cart-item-freereturns">
-                                            & FREE Returns
+                                            <div className="cart-item-freereturns">
+                                                & FREE Returns
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

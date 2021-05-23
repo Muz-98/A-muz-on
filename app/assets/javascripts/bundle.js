@@ -532,9 +532,9 @@ var Cart = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: window.primeLogo,
           alt: "logo"
-        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "cart-item-freereturns"
-        }, "& FREE Returns")));
+        }, "& FREE Returns"))));
       }))));
     }
   }]);
