@@ -6,8 +6,11 @@ Rails.application.routes.draw do
     resource :session, only:[:create, :destroy]
     
     get "/products/search", to: "products#search"
-    resources :products, only: [:show, :index]
+    resources :products, only: [:show, :index] do 
+      resources :reviews, only: [:create, :index, :show]
+    end
 
+    resources :reviews, only: [:destroy, :update]
     resources :purchases, only: [:index, :create, :show, :destroy, :update] do
         delete "clear", on: :collection
       end
