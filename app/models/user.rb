@@ -61,4 +61,13 @@ attr_reader :password
     through: :cart,
     source: :purchases
 
+    has_many :authored_reviews,
+    class_name: :Review,
+    primary_key: :id,
+    foreign_key: :user_id
+
+    has_many :reviewed_products,
+    through: :reviews,
+    source: :product 
+
 end

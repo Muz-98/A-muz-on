@@ -20,4 +20,9 @@ class Product < ApplicationRecord
         Product 
             .where(mapped_query)
     end
+
+    has_many :reviews,
+    class_name: :Review,
+    primary_key: :id,
+    foreign_key: :product_id
 end
