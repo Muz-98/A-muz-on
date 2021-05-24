@@ -29,9 +29,15 @@
 
 }
 
+.cart-item-right {
+    padding-left: 10px;
+}
+
 .cart-item-title {
     font-size: 18px;
     color: #0066C0;
+    margin: 8px 0px 5px;
+    display: block;
 }
 
 .cart-item-title:hover {
@@ -48,4 +54,43 @@
 
 .cart-item-prime-logo {
     display: flex;
+    font-size: 14px;
+    color: #111111;
+    margin: 5px 0px;
+    width: 200px;
+}
+
+.cart-item-prime-logo img {
+    padding-right: 3px;
+}
+
+.gift {
+    font-size: 12px;
+    margin-left: 0px;
+}
+.gift-text {
+    vertical-align: 17%;
+    padding-left: 3px;
+}
+
+.delete-cart-item {
+    color: #0066C0;
+    background: transparent;
+    width: 50px;
+    height: 20px;
+    border: none;
+    border-left: 1px solid #ddd;
+    margin: auto;
+    margin-left: 0px;
+    padding-left: 10px;
+    font-size: 12px;
+    margin-top: 12px;
+}
+.delete-cart-item:hover {
+    cursor: pointer;
+    color: #ff9900;
+    text-decoration: underline;
+}
+.delete-cart-item:focus, .delete-cart-item:active {
+    outline: none;
 }

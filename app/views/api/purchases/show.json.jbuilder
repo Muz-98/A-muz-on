@@ -1,4 +1,4 @@
-
+json.id @purchase.product.id
 json.name @purchase.product.name
 json.price @purchase.product.price
 json.photos do 

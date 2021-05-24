@@ -40,6 +40,7 @@ class Api::PurchasesController < ApplicationController
     end
 
     def destroy
+       
         if logged_in?
             @purchase = Purchase.find(params[:id])
             if @purchase.destroy
