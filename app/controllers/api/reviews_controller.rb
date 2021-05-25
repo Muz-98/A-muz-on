@@ -19,9 +19,10 @@ class Api::ReviewsController < ApplicationController
     def create
         @review = Review.new(review_params)
         @review.user_id = current_user.id
-        @review.product_id = params[:productId]
-        debugger 
+        @review.product_id = params[:review][:product_id]
+        # debugger 
         if @review.save!
+            # @product = Product.find_by(id: params[:review][:product_id])
             @reviews = Review.all 
             render :index
         else

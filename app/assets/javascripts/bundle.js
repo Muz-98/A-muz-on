@@ -1441,10 +1441,10 @@ var mSTP = function mSTP(state, ownProps) {
   return {
     formType: "Create Review",
     review: {
-      userId: state.session.id,
+      user_id: state.session.id,
       title: "",
       body: " ",
-      productId: ownProps.match.params.productId,
+      product_id: ownProps.match.params.productId,
       rating: 1
     }
   };

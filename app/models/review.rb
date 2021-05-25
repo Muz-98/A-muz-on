@@ -13,7 +13,7 @@
 #
 
 class Review < ApplicationRecord
-    validates :title, :body, :rating, :user_id, :product_id, presence: true
+    validates :title, :body, :rating, :user_id, presence: true
 
     belongs_to :user,
     class_name: :User,
