@@ -1,6 +1,8 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import NavBar from '../nav_bar/nav_bar_container'
+import ReviewCreateContainer from './reviews/new_review_container';
+import '@fortawesome/fontawesome-free/js/all.js';
 
 class ProductShow extends React.Component {
     constructor(props) {
@@ -153,6 +155,11 @@ class ProductShow extends React.Component {
                         <h3 className="show-page-reviews-title">
                             Reviews 
                         </h3>
+                    </div>
+
+                    <div className="review-container">
+                        <ReviewCreateContainer productId={this.props.product.id} />
+
                     </div>
                 </div>
             </div>
