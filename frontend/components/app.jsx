@@ -6,6 +6,7 @@ import SignupForm from "./session/signup/signup_form_container"
 import LoginForm from './session/login/login_form_container'
 import ProductShow from './productShow/product_show_container'
 import SearchResults from './search_results/search_results_container'
+import NewReview from '../components/productShow/reviews/new_review_container'
 import NavBar from './nav_bar/nav_bar_container'
 import Footer from './footer/footer'
 import Cart from './cart/cart_container'
@@ -23,6 +24,7 @@ const App = () => (
                 <Route path="/products/:productId" component={ProductShow} />
                 <Route path="/search" component={SearchResults} />
                 <Route path="/cart" component={Cart} />
+                <Route path="/review/create-review" component={NewReview} />
             </Switch>
             </header>
         </div>

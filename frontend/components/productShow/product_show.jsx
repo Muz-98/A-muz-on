@@ -1,7 +1,9 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import NavBar from '../nav_bar/nav_bar_container'
 import ReviewCreateContainer from './reviews/new_review_container';
+import ReviewIndexContainer from './reviews/review_index_container';
 import '@fortawesome/fontawesome-free/js/all.js';
 
 class ProductShow extends React.Component {
@@ -48,14 +50,28 @@ class ProductShow extends React.Component {
             product_id: this.props.product.id,
             quantity: this.state.quantity
         }
-        this.props.createPurchase(purchase).then(() =>
-            this.props.history.push('/cart'))
+
+     if (this.props.isLoggedIn) {
+         this.props.createPurchase(purchase).then(() =>
+             this.props.history.push('/cart'))
+     } else {
+         this.props.history.push('/login')
+     }
     }
     
 
     render() {
         
         if (this.props.product === undefined) return null
+        // debugger 
+        const reviewButton = (this.props.isLoggedIn) ? (
+            <Link to={`/review/create-review`}>
+                <button className="review-button">Write a customer review</button></Link>
+        ) : (
+            <Link to={"/login"}>
+                <button className="review-button">Write a customer review</button>
+            </Link>
+        )
 
         return (
             <div>
@@ -151,16 +167,34 @@ class ProductShow extends React.Component {
                         </div>
                     </div>
 
-                    <div className="show-page-reviews-container">
+                    {/* <div className="show-page-reviews-container">
                         <h3 className="show-page-reviews-title">
                             Reviews 
                         </h3>
-                    </div>
+                    </div> */}
 
                     <div className="review-container">
-                        <ReviewCreateContainer productId={this.props.product.id} />
+                        <div className="review-left">
+                            <h2 className="review-section-title">Customer Reviews</h2>
+                            <h4 className="review-product-text">Review this product</h4>
+                            <div className="review-share-text">Share your thoughts with other customers</div>
+                            {/* <button className="review-button">Write a customer review</button> */}
+                            {reviewButton}
+
+                        </div>
+                        {/* <ReviewCreateContainer productId={this.props.product.id} /> */}
+
+                        <div className="review-right">
+                            {/* <div className="review-right-title">Top Reviews in the United States</div> */}
+                                <div className="review-index">
+                                    <ReviewIndexContainer productId={this.props.product.id} />
+                                </div>
+                           
+
+                        </div>
 
                     </div>
+
                 </div>
             </div>
         )
