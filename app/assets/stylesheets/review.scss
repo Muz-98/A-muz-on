@@ -46,26 +46,81 @@
     background: #F7FAFA;
 }
 
+.r-container {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.review-header {
+    font-size: 18px;
+}
+
+.review-ul {
+    padding-left: 0px;
+}
+
+.review-item {
+    margin-bottom: 30px;
+    // margin: 0px 0px 0px 20px;
+}
+
 .review-top {
     display: flex;
+    height: 20px;
+    margin-bottom: 3px;
+}
+
+.review-top:hover {
+    cursor: pointer;
+}
+
+
+
+.review-username {
+    font-size: 13px;
+    color: #0F1111;
+    margin-bottom: 10px;
+}
+
+.review-username:hover {
+    cursor: pointer;
 }
 
 .review-rating {
-    margin-right: 10px;
+    margin-right: 15px;
     
 }
 
 // .review-rating Rating {
-//     height: 15px;
-// }
-
+    //     height: 15px;
+    // }
+  
 .review-title {
     font-size: 14px;
     font-weight: bold;
 }
 
+.review-title:hover {
+    color: #C7511F;
+    text-decoration: underline;
+}
+
+.review-line2 {
+    color: #565959;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.review-verified {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: bold;
+    color: #C45500;
+    margin-bottom: 10px;
+}
+
 .review-body {
     font-size: 14px;
+    margin-bottom: 10px;
 }
 
 // .ratingz span {
@@ -78,3 +133,67 @@
 //     // height: 30px;
 //     background-color: black;
 // }
+
+.ratingz span {
+    width: 18px;
+}
+
+// .ratingz {
+//     width: 80px;
+// }
+
+.rating-star {
+    height: 18px;
+    width: 18px;
+}
+
+.review-helpful-text {
+    font-size: 14px;
+    color: #565959;
+    margin-bottom: 10px;
+}
+
+.review-bottom {
+    display: flex;
+}
+
+.review-helpful-button-cont {
+    padding-right: 20px;
+    border-right: 1px solid #DDDDDD;
+    // line-height: 5px;
+}
+
+.review-helpful {
+    width: 111px;
+    height: 37px;
+    background: #FFF;
+    border-color: #D5D9D9;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px 0 rgba(213,217,217, 0.5);
+    font-size: 14px;
+    line-height: 20px;
+    // border-right: 1px solid #DDDDDD;
+    // margin-right: 20px;
+}
+
+.review-helpful:hover {
+    background: #F7FAFA;
+}
+
+
+.review-abuse {
+    font-size: 14px;
+    color: #565959;
+    // border-left: 1px solid #DDDDDD;
+    position: relative;
+    top: 10px;
+    margin-left: 10px;
+}
+
+.review-abuse:hover {
+    cursor: pointer;
+}

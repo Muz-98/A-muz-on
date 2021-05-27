@@ -11,7 +11,7 @@ const mSTP = (state, ownProps) => {
             user_id: state.session.id,
             title: "",
             body: " ",
-            product_id: ownProps.match.params.productId,
+            product_id: ownProps.location.productId,
             rating: 1
         }
 

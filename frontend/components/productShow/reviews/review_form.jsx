@@ -29,14 +29,22 @@ class ReviewForm extends React.Component {
     }
 
     render() {
+        const full = (
+            <img src={window.fullStar} />
+        )
+
+        const empty = (
+            <img src={window.emptyStar} />
+        )
+
         return (
             <div>
                 <form action="" onSubmit={this.handleSubmit}>
                     <h1>{this.props.formType}</h1>
                     <Rating
                         initialRating={this.state.rating}
-                        // emptySymbol="far fa-star"
-                        // fullSymbol="fas fa-star"
+                        emptySymbol={empty}
+                        fullSymbol={full}
                         onChange={this.updateReview('rating')}
                     />
                     <h3>Add a title</h3>

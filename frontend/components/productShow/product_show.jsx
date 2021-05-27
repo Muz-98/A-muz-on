@@ -22,26 +22,6 @@ class ProductShow extends React.Component {
     }
 
     haddToCart(e) {
-        // e.preventDefault()
-        // // debugger 
-        // // this.props.history.push('/cart')
-        // let cartsProducts = {
-        //     product_id: this.props.product.id,
-        //     quantity: 1
-        // }
-  
-        // if (this.props.isLoggedIn) {
-        //     // debugger
-        //     this.props.addToCart(cartsProducts).then(() => {
-                    
-        //             this.props.history.push('/cart')
-                     
-        //         });
-
-        // } else {
-  
-        //     this.props.history.push('/login')
-        // }
          
         e.preventDefault();
          
@@ -64,8 +44,14 @@ class ProductShow extends React.Component {
         
         if (this.props.product === undefined) return null
         // debugger 
+
+        const dataLink = {
+            pathname: '/review/create-review',
+            productId: `${this.props.product.id}`
+        }
+
         const reviewButton = (this.props.isLoggedIn) ? (
-            <Link to={`/review/create-review`}>
+            <Link to={dataLink}>
                 <button className="review-button">Write a customer review</button></Link>
         ) : (
             <Link to={"/login"}>
