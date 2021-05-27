@@ -1649,7 +1649,7 @@ var ReviewIndex = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, ReviewIndex);
 
     _this = _super.call(this, props);
-    _this.handleUpdateReview = _this.handleUpdateReview.bind(_assertThisInitialized(_this));
+    _this.handleDeleteReview = _this.handleDeleteReview.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1665,14 +1665,17 @@ var ReviewIndex = /*#__PURE__*/function (_React$Component) {
 
       // e.preventDefault();
       return function () {
-        return _this2.props.destroyReview(reviewId).then(function () {
-          return window.location.reload();
-        });
-      };
-    }
+        return _this2.props.destroyReview(reviewId);
+      }; // window.location.reload());
+    } // componentDidUpdate() {
+    //     // this.componentDidMount();
+    // }
+
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       var reviews = this.props.reviews;
       var full = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "rating-star",
@@ -1725,7 +1728,9 @@ var ReviewIndex = /*#__PURE__*/function (_React$Component) {
           className: "review-helpful"
         }, "Helpful")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-abuse"
-        }, "Report abuse"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Delete"))));
+        }, "Report abuse"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          onClick: _this3.handleDeleteReview(review.id)
+        }, "Delete"))));
       })));
     }
   }]);

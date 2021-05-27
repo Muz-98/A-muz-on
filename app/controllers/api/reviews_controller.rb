@@ -40,7 +40,8 @@ class Api::ReviewsController < ApplicationController
     end
     
     def destroy
-        @review = Review.find_by(id: params[:id]).destroy
+        # debugger 
+        @review = current_user.authored_reviews.find(params[:id]).destroy
         @product = Product.find_by(title: params[:review][:product])
         render :show 
     end

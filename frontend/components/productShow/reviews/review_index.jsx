@@ -7,7 +7,7 @@ class ReviewIndex extends React.Component {
         super(props);
 
 
-        this.handleUpdateReview = this.handleUpdateReview.bind(this)
+        this.handleDeleteReview = this.handleDeleteReview.bind(this)
     }
 
     componentDidMount() {
@@ -18,9 +18,13 @@ class ReviewIndex extends React.Component {
     handleDeleteReview(reviewId) {
         // e.preventDefault();
         return () =>
-            this.props.destroyReview(reviewId).then(() =>
-                window.location.reload());
+            this.props.destroyReview(reviewId)
+                // window.location.reload());
     }
+
+    // componentDidUpdate() {
+    //     // this.componentDidMount();
+    // }
 
     render() {
         const {reviews} = this.props
@@ -90,7 +94,7 @@ class ReviewIndex extends React.Component {
                                     </div>
 
                                     <div>
-                                        <button >Delete</button>
+                                        <button onClick={this.handleDeleteReview(review.id)}>Delete</button>
                                     </div>
 
                                 </div>
