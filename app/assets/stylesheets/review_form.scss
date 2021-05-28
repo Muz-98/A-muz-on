@@ -1,0 +1,102 @@
+.review-form-cont {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 800px;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 200px;
+}
+
+.review-form-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.review-form-product-cont {
+    display: flex;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+
+
+.review-form-product-cont img {
+    width: 70px;
+    height: 75px;
+    margin-right: 10px;
+}
+
+.review-form-product-name {
+    font-size: 16px;
+    color: #0f1111;
+    position: relative;
+    top: 15px;
+    // font-weight: bold;
+}
+
+.review-form-rating-cont {
+    // display: flex;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.review-form-review-cont {
+    // display: flex;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.review-form-headline-input {
+    width: 100%;
+    height: 31px;
+    font-size: 14px;
+    border: 1px solid #a6a6a6;
+    border-radius: 3px;
+    outline: none;
+    padding: 5px 7px;
+    margin-bottom: 20px;
+}
+
+.review-form-headline-input:focus {
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
+}
+
+.review-form-review-text {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 130px;
+    border: 1px solid #a6a6a6;
+    border-radius: 3px;
+    outline: none;
+    padding: 5px 7px;
+}
+
+.review-form-review-text:focus {
+    border-color: #e77600;
+    box-shadow: 0 0 3px 2px rgba(228,121,17,.5);
+}
+
+.review-form-btn-cont {
+    display: flex;
+    margin-top: 20px;
+    position: relative;
+}
+
+.review-form-btn {
+    position: absolute;
+    right: 0; 
+    padding: 0px 10px 0px 11px ;
+    color: #565959;
+    font-size: 14px;
+    line-height: 29px;
+    width: 65px;
+    background-color: #F9F3E5;
+    border: 0.5px solid #aaaaaa;
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(255,255,255,.6) inset;
+}
+
+.review-form-btn:hover {
+    background: linear-gradient(#F5D68A, #EEBA36);
+    cursor: pointer;
+}

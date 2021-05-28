@@ -47,7 +47,8 @@ class ProductShow extends React.Component {
 
         const dataLink = {
             pathname: '/review/create-review',
-            productId: `${this.props.product.id}`
+            productId: `${this.props.product.id}`,
+            product: `${this.props.product}`
         }
 
         const reviewButton = (this.props.isLoggedIn) ? (

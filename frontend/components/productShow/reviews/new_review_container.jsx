@@ -4,7 +4,7 @@ import { createReview } from '../../../actions/review_actions';
 import { withRouter } from 'react-router-dom';
 
 const mSTP = (state, ownProps) => {
-    debugger 
+    // debugger 
     return {
         formType: "Create Review",
         review: {
@@ -13,7 +13,8 @@ const mSTP = (state, ownProps) => {
             body: " ",
             product_id: ownProps.location.productId,
             rating: 1
-        }
+        },
+        product: state.entities.products[ownProps.location.productId]
 
     }
 }
