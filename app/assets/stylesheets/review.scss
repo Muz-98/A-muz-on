@@ -63,6 +63,18 @@
     // margin: 0px 0px 0px 20px;
 }
 
+.review-user {
+    display: flex;
+}
+
+.review-profile-pic {
+    margin-right: 5px;
+}
+
+.review-user:hover {
+    cursor: pointer;
+}
+
 .review-top {
     display: flex;
     height: 20px;
@@ -79,6 +91,8 @@
     font-size: 13px;
     color: #0F1111;
     margin-bottom: 10px;
+    position: relative;
+    top: 13px;
 }
 
 .review-username:hover {

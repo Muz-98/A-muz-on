@@ -8,6 +8,9 @@
 
 Product.destroy_all
 User.destroy_all
+Purchase.destroy_all
+Cart.destroy_all
+Review.destroy_all
 
 #Demo User 
 demoUser = User.create!(username: 'Jeff Bezos', email: 'bezos1994@ebay.com', password: 'amuzon')
@@ -134,3 +137,35 @@ nflKamara.photos.attach(io: image37, filename: 'KamaraNFL2.jpeg')
 
 nflDeshaun.photos.attach(io: image38, filename: 'DeshaunWatsonNFL1.jpeg')
 nflDeshaun.photos.attach(io: image39, filename: 'DeshaunWatsonNFL2.jpg')
+
+
+
+
+
+20.times do
+    name = Faker::FunnyName.two_word_name
+    new_email = Faker::Internet.free_email
+    new_user = User.create!({
+        username: name,
+        email: new_email,
+        password: "password",
+    })
+
+    Cart.create!(user_id: new_user.id)
+
+    puts new_user.username
+end
+
+all_users = User.all
+all_products = Product.all 
+
+all_products.each do |product| 
+    rand(7).times do 
+        all_users.sample.authored_reviews.create!({
+            title: Faker::TvShows::Simpsons.location,
+            body: Faker::Movies::HarryPotter.quote,
+            rating: rand(3..5),
+            product_id: product.id,
+        })
+    end
+end

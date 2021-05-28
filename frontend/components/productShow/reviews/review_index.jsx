@@ -46,7 +46,7 @@ class ReviewIndex extends React.Component {
                         return (
                             <div className="review-item">
                                 <div className="review-user">
-
+                                    <img  className="review-profile-pic" src={window.profilePic2} alt="profilePic"/>
                                     <div className="review-username">
                                         {review.userName}
                                     </div>
