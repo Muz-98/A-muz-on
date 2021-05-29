@@ -12,7 +12,7 @@ class Api::PurchasesController < ApplicationController
     end
 
     def create
-         
+        debugger 
        @purchase = Purchase.new(purchase_params);
        @purchase.cart_id = current_user.cart.id
        @purchase.product_id = params[:purchase][:product_id]

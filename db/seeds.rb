@@ -14,6 +14,7 @@ Review.destroy_all
 
 #Demo User 
 demoUser = User.create!(username: 'Jeff Bezos', email: 'bezos1994@ebay.com', password: 'amuzon')
+Cart.create!(user_id: demoUser.id)
 
 # Seed Products
 retroVince = Product.create!(name: 'Retro Vince Carter Raptors Jersey', description: '1998-1999 Mitchell & Ness Swingman Throwback Jersey', price: 149.99)
