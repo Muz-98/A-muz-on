@@ -43,7 +43,7 @@ class ProductShow extends React.Component {
     render() {
         
         if (this.props.product === undefined) return null
-        // debugger 
+
 
         const dataLink = {
             pathname: '/review/create-review',

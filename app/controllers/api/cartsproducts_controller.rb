@@ -11,10 +11,10 @@ class Api::CartsproductsController < ApplicationController
     end
 
     def create 
-        # debugger
+    
         @carts_product = CartsProducts.new(carts_products_params)
         @carts_product.cart_id = current_user.cart.id
-        # debugger 
+        
         if @carts_product.save 
             render :show 
         else 

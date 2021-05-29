@@ -9,7 +9,7 @@ class Cart extends React.Component {
     }
     
     // componentDidMount() {
-    //     debugger
+  
     //     this.props.fetchCart()
     //     console.log(this.props)
     // }
@@ -27,7 +27,7 @@ class Cart extends React.Component {
         let fullCart = []
         
         fullCart.push(this.props.cartProducts)
-        // debugger 
+ 
 
         if (Object.keys(this.props.cartProducts).length) {
 

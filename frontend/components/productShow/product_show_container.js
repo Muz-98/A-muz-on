@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom'
 import { fetchProducts } from '../../util/product_api_util'
 
 const mSTP = (state, ownProps) => {
-//    debugger 
+
     return {
         product: state.entities.products[ownProps.match.params.productId],
         isLoggedIn: Boolean(state.session.id),

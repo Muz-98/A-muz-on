@@ -37,7 +37,7 @@ class ReviewForm extends React.Component {
         const empty = (
             <img src={window.emptyStar} />
         )
-            // debugger 
+
         return (
             <div>
                 <NavBar />

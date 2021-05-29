@@ -568,7 +568,6 @@ var Cart = /*#__PURE__*/function (_React$Component) {
 
     return _super.call(this, props);
   } // componentDidMount() {
-  //     debugger
   //     this.props.fetchCart()
   //     console.log(this.props)
   // }
@@ -589,7 +588,7 @@ var Cart = /*#__PURE__*/function (_React$Component) {
       }
 
       var fullCart = [];
-      fullCart.push(this.props.cartProducts); // debugger 
+      fullCart.push(this.props.cartProducts);
 
       if (Object.keys(this.props.cartProducts).length) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1267,8 +1266,7 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      if (this.props.product === undefined) return null; // debugger 
-
+      if (this.props.product === undefined) return null;
       var dataLink = {
         pathname: '/review/create-review',
         productId: "".concat(this.props.product.id),
@@ -1405,7 +1403,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 var mSTP = function mSTP(state, ownProps) {
-  //    debugger 
   return _defineProperty({
     product: state.entities.products[ownProps.match.params.productId],
     isLoggedIn: Boolean(state.session.id)
@@ -1459,7 +1456,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
-  // debugger 
   return {
     formType: "Create Review",
     review: {
@@ -1575,8 +1571,7 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
       });
       var empty = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: window.emptyStar
-      }); // debugger 
-
+      });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "review-form-cont",
         action: "",
@@ -1714,8 +1709,7 @@ var ReviewIndex = /*#__PURE__*/function (_React$Component) {
         className: "rating-star",
         src: window.emptyStar
       });
-      var randInt = Math.floor(Math.random() * 22); // debugger
-
+      var randInt = Math.floor(Math.random() * 22);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "r-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {

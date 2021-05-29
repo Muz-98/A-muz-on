@@ -37,7 +37,7 @@ class ReviewIndex extends React.Component {
         )
 
         const randInt = Math.floor(Math.random() * 22)
-        // debugger
+
         return (
             <div className='r-container'>
                 <h2 className="review-header">Top Reviews in the United States</h2>

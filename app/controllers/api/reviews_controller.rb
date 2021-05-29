@@ -20,7 +20,7 @@ class Api::ReviewsController < ApplicationController
         @review = Review.new(review_params)
         @review.user_id = current_user.id
         @review.product_id = params[:review][:product_id]
-        # debugger 
+        
         if @review.save!
             # @product = Product.find_by(id: params[:review][:product_id])
             @reviews = Review.all 
@@ -40,7 +40,7 @@ class Api::ReviewsController < ApplicationController
     end
     
     def destroy
-        # debugger 
+       
         @review = current_user.authored_reviews.find(params[:id]).destroy
         @product = Product.find_by(title: params[:review][:product])
         render :show 
