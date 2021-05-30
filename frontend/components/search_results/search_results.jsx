@@ -14,35 +14,38 @@ class SearchResults extends React.Component {
         const allResults = this.props.products.map(product => {
 
             return (
-                <div onClick={() => { this.props.history.push(`/products/${product.id}`) }} className="search-results-product-container">
-                    <div className="search-results-product-image">
-                        <img src={product.photos[0].imageUrl} alt=""/>
-                    </div>
-                    <div className="search-results-product-info">
-                        <div className="search-results-product-name">
-                           {product.name}
-                        </div>
-                        <div className="search-results-product-rating">
+                <li className="search-results-product-container">
 
+                    <Link  className ="search-link"onClick={() => { this.props.history.push(`/products/${product.id}`) }} >
+                        <div className="search-results-product-image">
+                            <img src={product.photos[0].imageUrl} alt=""/>
                         </div>
-                        <div className="search-results-product-price">
-                            $<strong>{product.price}</strong>
-                        </div>
-                        <div className="search-results-product-footer">
-                            <div className="search-results-product-footer-top">
-                                <img src={window.primeLogo} alt="Logo"/>
-                                &nbsp;
-                                <div className="search-results-product-footer-2">
-                                    Get it as soon as <strong>Tomorrow</strong>
+                        <div className="search-results-product-info">
+                            <div className="search-results-product-name">
+                            {product.name}
+                            </div>
+                            <div className="search-results-product-rating">
+
+                            </div>
+                            <div className="search-results-product-price">
+                                $<strong>{product.price}</strong>
+                            </div>
+                            <div className="search-results-product-footer">
+                                <div className="search-results-product-footer-top">
+                                    <img src={window.primeLogo} alt="Logo"/>
+                                    &nbsp;
+                                    <div className="search-results-product-footer-2">
+                                        Get it as soon as <strong>Tomorrow</strong>
+                                    </div>
+                                </div>
+                                <div className="search-results-product-footer-bot">
+                                    <div className="srpfb1">FREE Shipping on orders over $25</div>
+                                    <div className="srpfb2">shipped by A-muz-on</div>
                                 </div>
                             </div>
-                            <div className="search-results-product-footer-bot">
-                                <div className="srpfb1">FREE Shipping on orders over $25</div>
-                                <div className="srpfb2">shipped by A-muz-on</div>
-                            </div>
                         </div>
-                    </div>
-                </div>
+                    </Link>
+                </li>
             
             )
         })
@@ -51,19 +54,21 @@ class SearchResults extends React.Component {
             <div className="search-results-div">
                 <NavBar />
                 <div className="search-results-container">
-                    <div className="search-results-left">
+                    {/* <div className="search-results-left">
                         <div className="search-results-left-sidebar-container">
                             <div>
                                 Hello
                             </div>
                         </div>
-                    </div>
+                    </div> */}
 
                     <div className="search-results-right">
-                        <ul>
+                        <ul className="search-ul">
                             {allResults}
                         </ul>
                     </div>
+
+                    
                 </div>
             </div>
         )
