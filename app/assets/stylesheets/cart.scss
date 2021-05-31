@@ -157,6 +157,29 @@
 }
 
 
+.checkout-msg {
+    width: 300px;
+    height: 73px;
+    color: #007600;
+    font-size: 17px;
+    line-height: 25px;
+    top: 68px;
+    margin-left: -29px;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: none;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout-btn:focus .checkout-msg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .cart-noprod-cont {
     font-family: Arial, Helvetica, sans-serif;
     margin: 30px 0px 650px 30px;

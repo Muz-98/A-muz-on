@@ -6,6 +6,8 @@ class Cart extends React.Component {
 
     constructor(props) {
         super(props)
+
+        this.handleCheckout = this.handleCheckout.bind(this)
     }
     
     // componentDidMount() {
@@ -13,6 +15,14 @@ class Cart extends React.Component {
     //     this.props.fetchCart()
     //     console.log(this.props)
     // }
+
+    handleCheckout(e) {
+        e.preventDefault()
+
+        this.props.deleteAllFromCart().then(() => 
+           window.location.reload(false)
+        )
+    }
 
     render() {
         // if (curCart === undefined) return null 
@@ -102,7 +112,11 @@ class Cart extends React.Component {
                                     <label className='cart-right-gift'>
                                         <input type='checkbox' className='cart-right-input-gift' /><span className='cart-right-gift-text'>This order contains a gift</span>
                                     </label>
-                                    <button className="checkout-btn">Proceed to checkout</button>
+                                    <button className="checkout-btn">Proceed to checkout
+                                        <div className="checkout-msg">
+                                            Thank you! Your order has been received.
+                                        </div>
+                                    </button>
                                 </div>
                             </div>
                         </div>

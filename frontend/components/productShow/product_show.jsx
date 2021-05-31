@@ -135,7 +135,11 @@ class ProductShow extends React.Component {
                                             <button className='add-to-cart-btn' onClick={this.haddToCart}>Add to Cart</button>
                                         </div>
                                         <div className="show-page-right-buynow-btn">
-                                            <button className="buy-now-btn">Buy Now</button>
+                                            <button className="buy-now-btn">Buy Now
+                                            <div className="buy-now-msg">
+                                                Thank you! Your order has been received 
+                                            </div>
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
