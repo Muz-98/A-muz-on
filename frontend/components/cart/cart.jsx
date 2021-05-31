@@ -26,8 +26,14 @@ class Cart extends React.Component {
 
         let fullCart = []
         
+        let priceArr = []
+        priceArr.push(this.props.cartProducts.price)
+        let totalPrice = priceArr.reduce((a, b) => a + b, 0);
+        // console.log(totalPrice)
+
         fullCart.push(this.props.cartProducts)
- 
+        
+        let totalCartItems = fullCart.length
 
         if (Object.keys(this.props.cartProducts).length) {
 
@@ -37,51 +43,69 @@ class Cart extends React.Component {
     
                     <div className="cart-container">
                         <div className="cart-title">Shopping Cart</div>
-                        <ul className="cart-items">
-                            {fullCart.map((cartItem) => {
-                                return (
-                                    <div className="cart-item">
-                                        <div className="cart-item-left">
-                                            <img src={cartItem.photos[0].imageUrl} alt="product-photo" />
-                                        </div>
-    
-                                        <div className="cart-item-right">
-                                            <Link to={`/products/${cartItem.id}`}>
-                                                <div className="cart-item-title">{cartItem.name}</div>
-                                            </Link>
-                                            <div className="cart-item-in-stock">In Stock</div>
-                                            <div className="cart-item-prime-logo">
-                                                <img src={window.primeLogo} alt="logo" />
-                                                <div className="cart-item-freereturns">
-                                                    & FREE Returns
+
+                        <div className="cart-main-cont">
+
+                            <div className="cart-left">
+
+                                <ul className="cart-items">
+                                    {fullCart.map((cartItem) => {
+                                        return (
+                                            <div key={cartItem.id} className="cart-item">
+                                                <div className="cart-item-left">
+                                                    <img src={cartItem.photos[0].imageUrl} alt="product-photo" />
+                                                </div>
+            
+                                                <div className="cart-item-right">
+                                                    <Link to={`/products/${cartItem.id}`}>
+                                                        <div className="cart-item-title">{cartItem.name}</div>
+                                                    </Link>
+                                                    <div className="cart-item-in-stock">In Stock</div>
+                                                    <div className="cart-item-prime-logo">
+                                                        <img src={window.primeLogo} alt="logo" />
+                                                        <div className="cart-item-freereturns">
+                                                            & FREE Returns
+                                                        </div>
+                                                    </div>
+            
+                                                    <label className='gift'>
+                                                        <input type='checkbox' className='yes-gift' /><span className='gift-text'>This is a gift</span>
+                                                    </label>
+                                                    <div className='qty-delete-row'>
+                                                        {/* <select className='quantity-cart' value='Qty:'>
+                                                                <option value='1'>Qty: 1</option>
+                                                                <option value='2'>2</option>
+                                                                <option value='3'>3</option>
+                                                                <option value='4'>4</optio
+                                                                <option value='5'>5</option>
+                                                                <option value='6'>6</option>
+                                                                <option value='7'>7</option>
+                                                                <option value='8'>8</option>
+                                                                <option value='9'>9</option>
+                                                                <option value='10'>10</option>
+                                                            </select> */}
+                                                        <button className='delete-cart-item' onClick={() => this.props.deleteFromCart(cartItem.id)}>Delete</button>
+                                                        {/* <button className='delete-cart-item'>Delete</button> */}
+                                                    </div>
                                                 </div>
                                             </div>
-    
-                                            <label className='gift'>
-                                                <input type='checkbox' className='yes-gift' /><span className='gift-text'>This is a gift</span>
-                                            </label>
-                                            <div className='qty-delete-row'>
-                                                {/* <select className='quantity-cart' value='Qty:'>
-                                                        <option value='1'>Qty: 1</option>
-                                                        <option value='2'>2</option>
-                                                        <option value='3'>3</option>
-                                                        <option value='4'>4</optio
-                                                        <option value='5'>5</option>
-                                                        <option value='6'>6</option>
-                                                        <option value='7'>7</option>
-                                                        <option value='8'>8</option>
-                                                        <option value='9'>9</option>
-                                                        <option value='10'>10</option>
-                                                    </select> */}
-                                                <button className='delete-cart-item' onClick={() => this.props.deleteFromCart(cartItem.id)}>Delete</button>
-                                                {/* <button className='delete-cart-item'>Delete</button> */}
-                                            </div>
-                                        </div>
+                                        )
+                                    } )}
+                                </ul>
+                            </div>
+
+                            <div className="cart-right">
+                                <div className="subtotal-cont">
+                                    <div className="subtotal-title">
+                                        Subtotal ({totalCartItems} items): <span className="subtotal-price">${totalPrice} </span>
                                     </div>
-                                )
-                            } )}
-                        </ul>
-                       {/* {this.props.cartProducts.name} */}
+                                    <label className='cart-right-gift'>
+                                        <input type='checkbox' className='cart-right-input-gift' /><span className='cart-right-gift-text'>This order contains a gift</span>
+                                    </label>
+                                    <button className="checkout-btn">Proceed to checkout</button>
+                                </div>
+                            </div>
+                        </div>
                         
                     </div>
                 </div>
@@ -92,8 +116,12 @@ class Cart extends React.Component {
             return (
                 <div>
                     <NavBar />
-                    <div className="cart-title">Shopping Cart</div>
-                    <div>Your cart is empty</div>
+
+                    <div className="cart-noprod-cont">
+                        <div className="cart-title">Shopping Cart</div>
+                        <div className="cart-empty">Your cart is empty, try filling it with some products!</div>
+
+                    </div>
 
                 </div>
             )

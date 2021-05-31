@@ -17,7 +17,7 @@
 }
 
 .show-page-left {
-    height: 600px; 
+    // height: 600px; 
   overflow: hidden;
   flex-grow: 1;
 }
@@ -25,7 +25,8 @@
 .show-page-left img {
   transition: transform .5s ease;
   margin-bottom: 50px;
-//   height: 100px;
+ height: 600px;
+//  width: 100%;
 }
 
 .show-page-left:hover img {

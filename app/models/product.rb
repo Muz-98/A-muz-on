@@ -15,7 +15,7 @@ class Product < ApplicationRecord
 
     def self.search_by(query)
         split_query = query.split(" ")
-        mapped_query = split_query.map{|n| "name LIKE '%#{n}%'"}.join(" OR ")
+        mapped_query = split_query.map{|n| "name ILIKE '%#{n}%'"}.join(" OR ")
 
         Product 
             .where(mapped_query)

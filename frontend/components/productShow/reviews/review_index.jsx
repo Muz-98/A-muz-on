@@ -44,7 +44,7 @@ class ReviewIndex extends React.Component {
                 <ul className="review-ul">
                     {reviews.map(review => {
                         return (
-                            <div className="review-item">
+                            <div key={review.id} className="review-item">
                                 <div className="review-user">
                                     <img  className="review-profile-pic" src={window.profilePic2} alt="profilePic"/>
                                     <div className="review-username">
