@@ -10,14 +10,14 @@ const mSTP = (state, ownProps) => {
     return {
         product: state.entities.products[ownProps.match.params.productId],
         isLoggedIn: Boolean(state.session.id),
-        product: state.entities.products[ownProps.match.params.productId]
+        cartProducts: Object.values(state.entities.cartProduct)
     }
 }
 
 const mDTP = dispatch => {
     return {
         fetchProduct: productId => dispatch(fetchProduct(productId)),
-        addToCart: cartProduct => dispatch(addToCart(cartProduct)),
+        // addToCart: cartProduct => dispatch(addToCart(cartProduct)),
         createPurchase: (purchase) => dispatch(createPurchase(purchase))
     }
 }

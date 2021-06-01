@@ -6,7 +6,8 @@ import { fetchCart, updatePurchase, destroyPurchase, destroyPurchases} from '../
 const mSTP = state => {
     return ({
         cartProducts: state.entities.cartProduct,
-        currentUser: state.session.currentUser
+        currentUser: state.session.currentUser,
+        cartProductId: Object.keys(state.entities.cartProduct)
     })
 }
 

@@ -21,10 +21,12 @@ class ProductShow extends React.Component {
         this.props.fetchProduct(this.props.match.params.productId)
     }
 
+
+
     haddToCart(e) {
          
         e.preventDefault();
-         
+        //  debugger 
         const purchase = {
             
             product_id: this.props.product.id,
@@ -32,8 +34,24 @@ class ProductShow extends React.Component {
         }
 
      if (this.props.isLoggedIn) {
-         this.props.createPurchase(purchase).then(() =>
-             this.props.history.push('/cart'))
+        let itemsArr = []
+        // debugger 
+        for (let i = 0; i < this.props.cartProducts.length; i++) {
+            itemsArr.push(this.props.cartProducts[i])
+        }
+        // debugger 
+        if (itemsArr.includes(this.props.product)) {
+            return (
+                <div>
+                    <div>
+                        Already added to your cart
+                    </div>
+                </div>
+            )
+        } else {
+            this.props.createPurchase(purchase).then(() =>
+                this.props.history.push('/cart'))
+        }
      } else {
          this.props.history.push('/login')
      }
@@ -41,7 +59,7 @@ class ProductShow extends React.Component {
     
 
     render() {
-        
+        // debugger 
         if (this.props.product === undefined) return null
 
 

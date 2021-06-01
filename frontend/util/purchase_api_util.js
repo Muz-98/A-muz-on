@@ -5,6 +5,13 @@ export const fetchCart = () => {
     })
 };
 
+export const fetchCartItem = purchaseId => {
+    return $.ajax({
+        method: 'GET',
+        url: `/api/purchases/${purchaseId}`
+    })
+}
+
 export const createPurchase = (purchase) => {
     return $.ajax({
         method: 'POST',

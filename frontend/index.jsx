@@ -25,6 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     
     ReactDOM.render(<Root store={store} />, root);
+
+    window.$ = $;
     window.destroyPurchase = destroyPurchase;
     window.destroyPurchases = destroyPurchases;
     window.createPurchase = createPurchase;

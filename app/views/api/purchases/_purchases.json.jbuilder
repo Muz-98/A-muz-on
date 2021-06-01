@@ -1,1 +1,1 @@
-json.extract! purchase, :id, :user_id, :product_id, :quantity
+json.extract! purchase, :id, :product_id, :quantity

@@ -10,18 +10,26 @@ class Cart extends React.Component {
         this.handleCheckout = this.handleCheckout.bind(this)
     }
     
-    // componentDidMount() {
-  
-    //     this.props.fetchCart()
-    //     console.log(this.props)
-    // }
+    componentDidMount() {
+        this.props.fetchCart()
+        // console.log(this.props.fetchCart())
+    }
 
     handleCheckout(e) {
         e.preventDefault()
 
         this.props.deleteAllFromCart().then(() => 
-           window.location.reload(false)
+           window.location.reload()
         )
+    }
+
+    componentDidUpdate(prevProps) {
+        const prev = Object.values(prevProps.cartProducts);
+        const current = Object.values(this.props.cartProducts);
+
+        if (prev.length !== current.length) {
+            this.props.fetchCart();
+        }
     }
 
     render() {
@@ -34,19 +42,35 @@ class Cart extends React.Component {
             return null
         }
 
-        let fullCart = []
+        // let fullCart = []
+        let fullCart = Object.values(this.props.cartProducts)
         
         let priceArr = []
         priceArr.push(this.props.cartProducts.price)
         let totalPrice = priceArr.reduce((a, b) => a + b, 0);
         // console.log(totalPrice)
+        debugger 
 
-        fullCart.push(this.props.cartProducts)
+        // if (Object.values(this.props.cartProducts).length > 4) {
+        //     let arr = (Object.values(this.props.cartProducts))
+        //     let names = []
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (!names.includes(arr[i].name)) {
+        //             fullCart.push(arr[i])
+        //         }
+        //         names.push(arr[i].name)
+        //     }
+             
+        // } else {
+
+        //     fullCart.push(this.props.cartProducts)
+        // }
+
         
         let totalCartItems = fullCart.length
 
         if (Object.keys(this.props.cartProducts).length) {
-
+            // debugger
             return (
                 <div>
                     <NavBar />
@@ -112,7 +136,7 @@ class Cart extends React.Component {
                                     <label className='cart-right-gift'>
                                         <input type='checkbox' className='cart-right-input-gift' /><span className='cart-right-gift-text'>This order contains a gift</span>
                                     </label>
-                                    <button className="checkout-btn">Proceed to checkout
+                                    <button onClick={this.handleCheckout} className="checkout-btn">Proceed to checkout
                                         <div className="checkout-msg">
                                             Thank you! Your order has been received.
                                         </div>
