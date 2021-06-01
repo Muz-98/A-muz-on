@@ -10,7 +10,7 @@ class SearchResults extends React.Component {
     }
 
     render() {
-        // debugger 
+
         const allResults = this.props.products.map(product => {
            
             return (

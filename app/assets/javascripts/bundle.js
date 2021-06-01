@@ -166,14 +166,14 @@ var fetchCartItem = function fetchCartItem(purchaseId) {
 var createPurchase = function createPurchase(purchase) {
   return function (dispatch) {
     return _util_purchase_api_util__WEBPACK_IMPORTED_MODULE_0__["createPurchase"](purchase).then(function (purchase) {
-      return dispatch(receiveCart(purchase));
+      return dispatch(receiveCartItem(purchase));
     });
   };
 };
 var updatePurchase = function updatePurchase(purchase) {
   return function (dispatch) {
     return _util_purchase_api_util__WEBPACK_IMPORTED_MODULE_0__["updatePurchase"](purchase).then(function (purchase) {
-      return dispatch(receiveCart(purchase));
+      return dispatch(receiveCartItem(purchase));
     });
   };
 };
@@ -587,6 +587,7 @@ var Cart = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.handleCheckout = _this.handleCheckout.bind(_assertThisInitialized(_this));
+    _this.handleDeleteItem = _this.handleDeleteItem.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -600,6 +601,14 @@ var Cart = /*#__PURE__*/function (_React$Component) {
     value: function handleCheckout(e) {
       e.preventDefault();
       this.props.deleteAllFromCart().then(function () {
+        return window.location.reload();
+      });
+    }
+  }, {
+    key: "handleDeleteItem",
+    value: function handleDeleteItem(e) {
+      e.preventDefault();
+      this.props.deleteFromCart(this.props.cartProductId).then(function () {
         return window.location.reload();
       });
     }
@@ -634,8 +643,7 @@ var Cart = /*#__PURE__*/function (_React$Component) {
       var totalPrice = priceArr.reduce(function (a, b) {
         return a + b;
       }, 0); // console.log(totalPrice)
-
-      debugger; // if (Object.values(this.props.cartProducts).length > 4) {
+      // if (Object.values(this.props.cartProducts).length > 4) {
       //     let arr = (Object.values(this.props.cartProducts))
       //     let names = []
       //     for (let i = 0; i < arr.length; i++) {
@@ -651,7 +659,6 @@ var Cart = /*#__PURE__*/function (_React$Component) {
       var totalCartItems = fullCart.length;
 
       if (Object.keys(this.props.cartProducts).length) {
-        // debugger
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_bar_nav_bar_container__WEBPACK_IMPORTED_MODULE_1__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "cart-container"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -697,9 +704,7 @@ var Cart = /*#__PURE__*/function (_React$Component) {
             className: "qty-delete-row"
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             className: "delete-cart-item",
-            onClick: function onClick() {
-              return _this2.props.deleteFromCart(cartItem.id);
-            }
+            onClick: _this2.handleDeleteItem
           }, "Delete"))));
         }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "cart-right"
@@ -760,6 +765,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state) {
+  // debugger 
   return {
     cartProducts: state.entities.cartProduct,
     currentUser: state.session.currentUser,
@@ -1340,20 +1346,18 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
     value: function haddToCart(e) {
       var _this2 = this;
 
-      e.preventDefault(); //  debugger 
-
+      e.preventDefault();
       var purchase = {
         product_id: this.props.product.id,
         quantity: this.state.quantity
       };
 
       if (this.props.isLoggedIn) {
-        var itemsArr = []; // debugger 
+        var itemsArr = [];
 
         for (var i = 0; i < this.props.cartProducts.length; i++) {
           itemsArr.push(this.props.cartProducts[i]);
-        } // debugger 
-
+        }
 
         if (itemsArr.includes(this.props.product)) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Already added to your cart"));
@@ -1369,7 +1373,6 @@ var ProductShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // debugger 
       if (this.props.product === undefined) return null;
       var dataLink = {
         pathname: '/review/create-review',
@@ -1993,7 +1996,6 @@ var SearchResults = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      // debugger 
       var allResults = this.props.products.map(function (product) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
           className: "search-results-product-container"

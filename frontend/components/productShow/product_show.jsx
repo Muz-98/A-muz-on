@@ -26,7 +26,7 @@ class ProductShow extends React.Component {
     haddToCart(e) {
          
         e.preventDefault();
-        //  debugger 
+    
         const purchase = {
             
             product_id: this.props.product.id,
@@ -35,11 +35,11 @@ class ProductShow extends React.Component {
 
      if (this.props.isLoggedIn) {
         let itemsArr = []
-        // debugger 
+   
         for (let i = 0; i < this.props.cartProducts.length; i++) {
             itemsArr.push(this.props.cartProducts[i])
         }
-        // debugger 
+         
         if (itemsArr.includes(this.props.product)) {
             return (
                 <div>
@@ -59,7 +59,7 @@ class ProductShow extends React.Component {
     
 
     render() {
-        // debugger 
+  
         if (this.props.product === undefined) return null
 
 

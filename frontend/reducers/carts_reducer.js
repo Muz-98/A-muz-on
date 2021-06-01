@@ -11,7 +11,7 @@ const cartReducer = (oldState = defaultState, action) => {
     Object.freeze(oldState);
     let newState = Object.assign({}, oldState);
     switch (action.type) {
-        case RECEIVE_CART_ITEM:
+        case RECEIVE_CART_ITEM: 
             newState[action.purchase.id] = action.purchase
             return newState;
         case RECEIVE_CART:

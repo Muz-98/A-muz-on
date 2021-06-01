@@ -46,13 +46,13 @@ export const fetchCartItem = purchaseId => dispatch => {
 
 export const createPurchase = (purchase) => dispatch => {
     return CartAPIUtil.createPurchase(purchase).then(purchase => (
-        dispatch(receiveCart(purchase))
+        dispatch(receiveCartItem(purchase))
     ))
 };
 
 export const updatePurchase = (purchase) => dispatch => {
     return CartAPIUtil.updatePurchase(purchase).then(purchase => (
-        dispatch(receiveCart(purchase))
+        dispatch(receiveCartItem(purchase))
     ))
 };
 

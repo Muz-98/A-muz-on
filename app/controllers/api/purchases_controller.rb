@@ -40,9 +40,9 @@ class Api::PurchasesController < ApplicationController
     end
 
     def destroy
-       debugger 
+    #    debugger 
         if logged_in?
-            @purchase = Purchase.find_by(product_id: params[:id])
+            @purchase = Purchase.find_by(id: params[:id])
             if @purchase.destroy
                 render :show 
             end

@@ -4,6 +4,7 @@ import Cart from './cart'
 import { fetchCart, updatePurchase, destroyPurchase, destroyPurchases} from '../../actions/cart_actions'
 
 const mSTP = state => {
+    // debugger 
     return ({
         cartProducts: state.entities.cartProduct,
         currentUser: state.session.currentUser,

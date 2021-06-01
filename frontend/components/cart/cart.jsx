@@ -8,6 +8,7 @@ class Cart extends React.Component {
         super(props)
 
         this.handleCheckout = this.handleCheckout.bind(this)
+        this.handleDeleteItem = this.handleDeleteItem.bind(this)
     }
     
     componentDidMount() {
@@ -20,6 +21,13 @@ class Cart extends React.Component {
 
         this.props.deleteAllFromCart().then(() => 
            window.location.reload()
+        )
+    }
+
+    handleDeleteItem(e) {
+        e.preventDefault()
+        this.props.deleteFromCart(this.props.cartProductId).then(() => 
+            window.location.reload()
         )
     }
 
@@ -49,7 +57,7 @@ class Cart extends React.Component {
         priceArr.push(this.props.cartProducts.price)
         let totalPrice = priceArr.reduce((a, b) => a + b, 0);
         // console.log(totalPrice)
-        debugger 
+         
 
         // if (Object.values(this.props.cartProducts).length > 4) {
         //     let arr = (Object.values(this.props.cartProducts))
@@ -70,7 +78,7 @@ class Cart extends React.Component {
         let totalCartItems = fullCart.length
 
         if (Object.keys(this.props.cartProducts).length) {
-            // debugger
+            
             return (
                 <div>
                     <NavBar />
@@ -118,7 +126,7 @@ class Cart extends React.Component {
                                                                 <option value='9'>9</option>
                                                                 <option value='10'>10</option>
                                                             </select> */}
-                                                        <button className='delete-cart-item' onClick={() => this.props.deleteFromCart(cartItem.id)}>Delete</button>
+                                                        <button className='delete-cart-item' onClick={this.handleDeleteItem}>Delete</button>
                                                         {/* <button className='delete-cart-item'>Delete</button> */}
                                                     </div>
                                                 </div>
