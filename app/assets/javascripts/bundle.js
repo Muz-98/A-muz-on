@@ -1638,25 +1638,30 @@ var ReviewForm = /*#__PURE__*/function (_React$Component) {
   _createClass(ReviewForm, [{
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      e.preventDefault();
-      this.props.action(this.state);
+      var _this2 = this;
+
+      e.preventDefault(); // debugger 
+
+      this.props.action(this.state).then(function () {
+        return _this2.props.history.push("/products/".concat(_this2.props.product.id));
+      });
     }
   }, {
     key: "updateReview",
     value: function updateReview(property) {
-      var _this2 = this;
+      var _this3 = this;
 
       return function (e) {
-        return _this2.setState(_defineProperty({}, property, e));
+        return _this3.setState(_defineProperty({}, property, e));
       };
     }
   }, {
     key: "update",
     value: function update(field) {
-      var _this3 = this;
+      var _this4 = this;
 
       return function (e) {
-        _this3.setState(_defineProperty({}, field, e.target.value));
+        _this4.setState(_defineProperty({}, field, e.target.value));
       };
     }
   }, {

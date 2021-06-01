@@ -15,8 +15,10 @@ class ReviewForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
-        this.props.action(this.state)
+        // debugger 
+        this.props.action(this.state).then(() => 
+            this.props.history.push(`/products/${this.props.product.id}`)
+        )
     }
 
     updateReview(property) {
