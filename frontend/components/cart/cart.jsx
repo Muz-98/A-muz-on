@@ -74,6 +74,7 @@ class Cart extends React.Component {
         //     fullCart.push(this.props.cartProducts)
         // }
 
+        let prodKeys = Object.keys(this.props.cartProducts)
         
         let totalCartItems = fullCart.length
 
@@ -91,16 +92,16 @@ class Cart extends React.Component {
                             <div className="cart-left">
 
                                 <ul className="cart-items">
-                                    {fullCart.map((cartItem) => {
+                                    {prodKeys.map((cartItemId) => {
                                         return (
-                                            <div key={cartItem.id} className="cart-item">
+                                            <div key={cartItemId} className="cart-item">
                                                 <div className="cart-item-left">
-                                                    <img src={cartItem.photos[0].imageUrl} alt="product-photo" />
+                                                    <img src={this.props.cartProducts[cartItemId].photos[0].imageUrl} alt="product-photo" />
                                                 </div>
-            
+                                                {/* {this.props.cartProducts[cartItemId]} */}
                                                 <div className="cart-item-right">
-                                                    <Link to={`/products/${cartItem.id}`}>
-                                                        <div className="cart-item-title">{cartItem.name}</div>
+                                                    <Link to={`/products/${cartItemId}`}>
+                                                        <div className="cart-item-title">{this.props.cartProducts[cartItemId].name}</div>
                                                     </Link>
                                                     <div className="cart-item-in-stock">In Stock</div>
                                                     <div className="cart-item-prime-logo">
@@ -126,7 +127,7 @@ class Cart extends React.Component {
                                                                 <option value='9'>9</option>
                                                                 <option value='10'>10</option>
                                                             </select> */}
-                                                        <button className='delete-cart-item' onClick={this.handleDeleteItem}>Delete</button>
+                                                        <button className='delete-cart-item' onClick={() => this.props.deleteFromCart(cartItemId).then(() => window.location.reload())}>Delete</button>
                                                         {/* <button className='delete-cart-item'>Delete</button> */}
                                                     </div>
                                                 </div>

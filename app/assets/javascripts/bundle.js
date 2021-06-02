@@ -656,6 +656,7 @@ var Cart = /*#__PURE__*/function (_React$Component) {
       //     fullCart.push(this.props.cartProducts)
       // }
 
+      var prodKeys = Object.keys(this.props.cartProducts);
       var totalCartItems = fullCart.length;
 
       if (Object.keys(this.props.cartProducts).length) {
@@ -669,22 +670,22 @@ var Cart = /*#__PURE__*/function (_React$Component) {
           className: "cart-left"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
           className: "cart-items"
-        }, fullCart.map(function (cartItem) {
+        }, prodKeys.map(function (cartItemId) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            key: cartItem.id,
+            key: cartItemId,
             className: "cart-item"
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "cart-item-left"
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-            src: cartItem.photos[0].imageUrl,
+            src: _this2.props.cartProducts[cartItemId].photos[0].imageUrl,
             alt: "product-photo"
           })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "cart-item-right"
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-            to: "/products/".concat(cartItem.id)
+            to: "/products/".concat(cartItemId)
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "cart-item-title"
-          }, cartItem.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          }, _this2.props.cartProducts[cartItemId].name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "cart-item-in-stock"
           }, "In Stock"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "cart-item-prime-logo"
@@ -704,7 +705,11 @@ var Cart = /*#__PURE__*/function (_React$Component) {
             className: "qty-delete-row"
           }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
             className: "delete-cart-item",
-            onClick: _this2.handleDeleteItem
+            onClick: function onClick() {
+              return _this2.props.deleteFromCart(cartItemId).then(function () {
+                return window.location.reload();
+              });
+            }
           }, "Delete"))));
         }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "cart-right"
