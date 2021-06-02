@@ -18,8 +18,9 @@ class ReviewIndex extends React.Component {
     handleDeleteReview(reviewId) {
         // e.preventDefault();
         return () =>
-            this.props.destroyReview(reviewId)
-                // window.location.reload());
+            this.props.destroyReview(reviewId).then(() => 
+                window.location.reload()
+            )
     }
 
     // componentDidUpdate() {
@@ -43,6 +44,8 @@ class ReviewIndex extends React.Component {
                 <h2 className="review-header">Top Reviews in the United States</h2>
                 <ul className="review-ul">
                     {reviews.map(review => {
+                    
+                    const reviewDate = new Date(review.updated_at).toDateString()
                         return (
                             <div key={review.id} className="review-item">
                                 <div className="review-user">
@@ -68,7 +71,7 @@ class ReviewIndex extends React.Component {
                                     </div>
                                 </div>
                                 <div className="review-line2">
-                                    Reviewed in the United States 
+                                    Reviewed in the United States on {reviewDate}
                                 </div>
 
                                 <div className="review-verified">
@@ -94,7 +97,14 @@ class ReviewIndex extends React.Component {
                                     </div>
 
                                     <div>
-                                        <button onClick={this.handleDeleteReview(review.id)}>Delete</button>
+
+                                        {this.props.authorId === review.user_id ?
+                                            <button
+                                                className="review-buttons"
+                                                onClick={this.handleDeleteReview(review.id)}>Delete</button>
+                                            : null
+                                        }
+                                        {/* <button onClick={this.handleDeleteReview(review.id)}>Delete</button> */}
                                     </div>
 
                                 </div>

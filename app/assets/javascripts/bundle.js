@@ -1795,8 +1795,10 @@ var ReviewIndex = /*#__PURE__*/function (_React$Component) {
 
       // e.preventDefault();
       return function () {
-        return _this2.props.destroyReview(reviewId);
-      }; // window.location.reload());
+        return _this2.props.destroyReview(reviewId).then(function () {
+          return window.location.reload();
+        });
+      };
     } // componentDidUpdate() {
     //     // this.componentDidMount();
     // }
@@ -1823,6 +1825,7 @@ var ReviewIndex = /*#__PURE__*/function (_React$Component) {
       }, "Top Reviews in the United States"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "review-ul"
       }, reviews.map(function (review) {
+        var reviewDate = new Date(review.updated_at).toDateString();
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           key: review.id,
           className: "review-item"
@@ -1848,7 +1851,7 @@ var ReviewIndex = /*#__PURE__*/function (_React$Component) {
           className: "review-title"
         }, review.title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-line2"
-        }, "Reviewed in the United States"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, "Reviewed in the United States on ", reviewDate), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-verified"
         }, "Verified Purchase"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-body"
@@ -1862,9 +1865,10 @@ var ReviewIndex = /*#__PURE__*/function (_React$Component) {
           className: "review-helpful"
         }, "Helpful")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "review-abuse"
-        }, "Report abuse"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }, "Report abuse"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, _this3.props.authorId === review.user_id ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "review-buttons",
           onClick: _this3.handleDeleteReview(review.id)
-        }, "Delete"))));
+        }, "Delete") : null)));
       })));
     }
   }]);
