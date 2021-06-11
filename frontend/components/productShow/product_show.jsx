@@ -103,7 +103,7 @@ class ProductShow extends React.Component {
                                         <div className="show-page-middle-price-container">
                                             <div className="show-page-price-text">Price:</div>
                                             &nbsp;
-                                            <div className="show-page-middle-price">{this.props.product.price}</div>
+                                            <div className="show-page-middle-price">$ {this.props.product.price}</div>
                                             &nbsp;
                                             <div className="show-page-middle-price-prime-logo">
                                                 <img src={window.primeLogo} alt="logo"/>

@@ -77,7 +77,7 @@ class Cart extends React.Component {
         let prodKeys = Object.keys(this.props.cartProducts)
         
         let totalCartItems = fullCart.length
-
+        // debugger 
         if (Object.keys(this.props.cartProducts).length) {
             
             return (
@@ -93,6 +93,7 @@ class Cart extends React.Component {
 
                                 <ul className="cart-items">
                                     {prodKeys.map((cartItemId) => {
+                                      
                                         return (
                                             <div key={cartItemId} className="cart-item">
                                                 <div className="cart-item-left">
@@ -100,7 +101,7 @@ class Cart extends React.Component {
                                                 </div>
                                                 {/* {this.props.cartProducts[cartItemId]} */}
                                                 <div className="cart-item-right">
-                                                    <Link to={`/products/${cartItemId}`}>
+                                                    <Link to={`/products/${this.props.cartProducts[cartItemId].product_id}`}>
                                                         <div className="cart-item-title">{this.props.cartProducts[cartItemId].name}</div>
                                                     </Link>
                                                     <div className="cart-item-in-stock">In Stock</div>

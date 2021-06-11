@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import ReviewForm from "./review_form";
+import UpdateReviewForm from "./edit_review_form";
 import { updateReview, fetchReviews } from "../../../actions/review_actions";
 
 const mSTP = state => ({
@@ -14,5 +14,5 @@ const mDTP = dispatch => ({
     fetchReviews: (reviewId) => dispatch(fetchReviews(reviewId)),
 });
 
-const EditReviewForm = withRouter(connect(mSTP, mDTP)(ReviewForm));
+const EditReviewForm = withRouter(connect(mSTP, mDTP)(UpdateReviewForm));
 export default EditReviewForm;

@@ -3,7 +3,7 @@ import Rating from 'react-rating'
 import NavBar from '../../nav_bar/nav_bar_container'
 // import '@fortawesome/fontawesome-free/js/all.js';
 
-class UpdateReviewForm extends React.Component {
+class ReviewForm extends React.Component {
     constructor(props) {
         super(props)
 
@@ -16,7 +16,7 @@ class UpdateReviewForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         // debugger 
-        this.props.action(this.state).then(() => 
+        this.props.action(this.state).then(() =>
             this.props.history.push(`/products/${this.props.product.id}`)
         )
     }
@@ -27,7 +27,7 @@ class UpdateReviewForm extends React.Component {
 
     update(field) {
         return e => {
-            this.setState({[field]: e.target.value})
+            this.setState({ [field]: e.target.value })
         }
     }
 
@@ -46,7 +46,7 @@ class UpdateReviewForm extends React.Component {
                 <form className="review-form-cont" action="" onSubmit={this.handleSubmit}>
                     <h2 className="review-form-title">{this.props.formType}</h2>
                     <div className="review-form-product-cont">
-                        <img src={this.props.product.photos[0]} alt="product-photo"/>
+                        <img src={this.props.product.photos[0]} alt="product-photo" />
                         <div className="review-form-product-name">
 
                             {this.props.product.name}
@@ -69,7 +69,7 @@ class UpdateReviewForm extends React.Component {
                     <div className="review-form-review-cont">
 
                         <h3>Add a headline</h3>
-                        <input className="review-form-headline-input"type="text" onChange={this.update('title')} value={this.state.title} placeholder="What's most important to know?"/>
+                        <input className="review-form-headline-input" type="text" onChange={this.update('title')} value={this.state.title} placeholder="What's most important to know?" />
 
                         <h3>Add a written review</h3>
                         <textarea className="review-form-review-text" onChange={this.update('body')} value={this.state.body} placeholder="What did you like or dislike? What did you use this product for?" ></textarea>
@@ -85,4 +85,4 @@ class UpdateReviewForm extends React.Component {
     }
 }
 
-export default UpdateReviewForm;
+export default ReviewForm;
