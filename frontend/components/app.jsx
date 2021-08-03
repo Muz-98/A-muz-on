@@ -29,9 +29,9 @@ const App = () => (
                 <Route path="/review/edit-review" component={EditReview} />
             </Switch>
             </header>
+        {/* <Route path="/" component={Footer} /> */}
         </div>
 
-        <Route path="/" component={Footer} />
 
         <footer className="footer">
             <div className="footer-top" onClick={() => window.scrollTo(0,0)}>
@@ -41,7 +41,7 @@ const App = () => (
                 <div className="footer-bottom-description">
                     <div className="footer-bottom-description-logo">
                         <a href="#">
-                             <img src={window.logoWhite} alt="Amuzon Logo"/>
+                             <img src={window.amuzonWhite} alt="Amuzon Logo"/>
                         </a>
                     </div>
                     <div className="footer-words">
@@ -54,12 +54,12 @@ const App = () => (
                     </div>
                 </div>
                 <div className="footer-bottom-logos">
-                    <a target="_blank" href="https://github.com/Muz-98">
-                        <img className="footer-github" target="_blank" src={window.logoGithubW} alt="Github"/>
+                    <a href="https://github.com/Muz-98" target="_blank">
+                        <img className="footer-github" src={window.logoGithubW} alt="Github"/>
                     </a>
 
-                    <a target="_blank" href="https://www.linkedin.com/in/muzammil-c"> 
-                        <img className="footer-linkedin" target= "_blank" src={window.logoLinkedinW} alt="Linkedin"/>
+                    <a href="https://www.linkedin.com/in/muzammil-c" target="_blank">
+                        <img className="footer-linkedin" src={window.logoLinkedinW} alt="Linkedin"/>
                     </a>
                 </div>
             </div>

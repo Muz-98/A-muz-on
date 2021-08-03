@@ -489,10 +489,7 @@ var App = function App() {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
     path: "/review/edit-review",
     component: _components_productShow_reviews_edit_review_container__WEBPACK_IMPORTED_MODULE_9__["default"]
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-    path: "/",
-    component: _footer_footer__WEBPACK_IMPORTED_MODULE_11__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
     className: "footer"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "footer-top",
@@ -508,7 +505,7 @@ var App = function App() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "#"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: window.logoWhite,
+    src: window.amuzonWhite,
     alt: "Amuzon Logo"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "footer-words"
@@ -519,19 +516,17 @@ var App = function App() {
   }, "Created using React, Redux, Javascript, Ruby, and Rails"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "footer-bottom-logos"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    target: "_blank",
-    href: "https://github.com/Muz-98"
+    href: "https://github.com/Muz-98",
+    target: "_blank"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "footer-github",
-    target: "_blank",
     src: window.logoGithubW,
     alt: "Github"
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    target: "_blank",
-    href: "https://www.linkedin.com/in/muzammil-c"
+    href: "https://www.linkedin.com/in/muzammil-c",
+    target: "_blank"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     className: "footer-linkedin",
-    target: "_blank",
     src: window.logoLinkedinW,
     alt: "Linkedin"
   }))))));
@@ -880,13 +875,15 @@ var Footer = /*#__PURE__*/function (_React$Component) {
       }, "Created using React, Redux, Javascript, Ruby, and Rails"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer-bottom-logos"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://github.com/Muz-98"
+        href: "https://github.com/Muz-98",
+        target: "_blank"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "footer-github",
         src: window.logoGithubW,
         alt: "Github"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://www.linkedin.com/in/muzammil-c"
+        href: "https://www.linkedin.com/in/muzammil-c",
+        target: "_blank"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "footer-linkedin",
         src: window.logoLinkedinW,

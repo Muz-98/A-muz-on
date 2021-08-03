@@ -24,11 +24,11 @@ class Footer extends React.Component {
                         </div>
                     </div>
                     <div className="footer-bottom-logos">
-                        <a href="https://github.com/Muz-98">
+                        <a href="https://github.com/Muz-98" target="_blank">
                             <img className="footer-github" src={window.logoGithubW} alt="Github"/>
                         </a>
 
-                        <a href="https://www.linkedin.com/in/muzammil-c"> 
+                        <a href="https://www.linkedin.com/in/muzammil-c" target="_blank">
                             <img className="footer-linkedin" src={window.logoLinkedinW} alt="Linkedin"/>
                         </a>
                     </div>
